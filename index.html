@@ -77,10 +77,12 @@
 <main class="pt-20">
 <!-- Hero Section -->
 <section class="relative min-h-[850px] flex items-center overflow-hidden bg-slate-950">
-<div class="absolute inset-0 z-0 pointer-events-none overflow-hidden">
-    <iframe class="w-[300%] h-[300%] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" 
-        src="https://www.youtube.com/embed/5H-Iq20f1G4?autoplay=1&mute=1&loop=1&playlist=5H-Iq20f1G4&controls=0&showinfo=0&rel=0&iv_load_policy=3&modestbranding=1" 
-        frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+<div class="absolute inset-0 z-0">
+    <video autoplay muted loop playsinline poster="https://lh3.googleusercontent.com/pw/AP1GczPrU_KAtLpX_C0F1I4pC_fG9n6O6k8_E_XkF_v_L0K_z_Xk_z_Xk_z_Xk_z_Xk_z_Xk_z_Xk_z_Xk_z_Xk_z_Xk_z_Xk_z_Xk_z_Xk_z_Xk_z_Xk_z_Xk=w1920-h1080-no" class="w-full h-full object-cover opacity-60">
+        <source src="videos/hero-bg.mp4" type="video/mp4">
+        <!-- Fallback a YouTube si el archivo local a˙n no existe -->
+        <iframe class="w-full h-full absolute top-0 left-0" src="https://www.youtube.com/embed/PjE9G-C-T-M?autoplay=1&mute=1&loop=1&playlist=PjE9G-C-T-M&controls=0&showinfo=0&rel=0&iv_load_policy=3&modestbranding=1" frameborder="0" allow="autoplay; encrypted-media"></iframe>
+    </video>
 </div>
 <div class="absolute inset-0 industrial-overlay"></div>
 <div class="relative z-10 max-w-screen-2xl mx-auto px-8 w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
@@ -394,6 +396,7 @@ industria minera y metalmec√°nica.<o:p></o:p></span></p><p class="" style=""></p
     });
 </script>
 </body></html>
+
 
 
 

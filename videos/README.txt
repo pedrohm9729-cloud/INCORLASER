@@ -1,0 +1,1 @@
+Sube aquí tu video de fondo y cámbiale el nombre a 'hero-bg.mp4' para que se reproduzca automáticamente en el inicio.
