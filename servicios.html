@@ -1,15 +1,11 @@
 <!DOCTYPE html>
-<html class="light" lang="es">
+<html class="scroll-smooth" lang="es">
 <head>
     <meta charset="utf-8"/>
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-    <title>Servicios Industriales | INCORLASER S.A.C. - Corte Láser y Metalmecánica</title>
-    <meta name="description" content="Descubra nuestras soluciones integrales: Corte láser de 30kW, soldadura homologada y diseño de ingeniería de alta precisión."/>
-    
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
-    <link rel="stylesheet" href="css/styles.css">
-
+    <title>Servicios Industriales | INCORLASER S.A.C.</title>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <script id="tailwind-config">
       tailwind.config = {
@@ -17,9 +13,14 @@
         theme: {
           extend: {
             "colors": {
-              "primary": "#001F58",
-              "accent-orange": "#FF6A00",
+              "primary": "#FF6A00",
+              "navy": "#001F58",
               "surface": "#faf8fe",
+              "surface-dim": "#dbd9df",
+              "surface-bright": "#faf8fe",
+              "surface-container-lowest": "#ffffff",
+              "surface-container-low": "#f4f3f8",
+              "surface-container-high": "#ebe9ef",
               "on-surface": "#1b1b1f",
               "on-surface-variant": "#44474e",
               "outline": "#74777f"
@@ -32,164 +33,236 @@
             },
             "fontFamily": {
               "headline": ["Manrope"],
-              "body": ["Inter"]
+              "body": ["Inter"],
+              "label": ["Inter"]
             }
           },
         },
       }
     </script>
+    <style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+    </style>
 </head>
-<body class="bg-surface text-on-surface antialiased uppercase">
+<body class="bg-surface text-on-surface font-body selection:bg-primary selection:text-white uppercase italic font-bold">
 
 <!-- Mobile Menu Overlay -->
-<div id="mobile-menu" class="mobile-menu font-bold italic">
+<div id="mobile-menu" class="hidden fixed inset-0 z-[60] bg-navy/95 text-white p-8 flex flex-col gap-6 text-2xl font-black italic uppercase">
+    <button id="close-menu" class="self-end"><span class="material-symbols-outlined text-4xl">close</span></button>
     <a href="index.html">Inicio</a>
     <a href="servicios.html">Servicios</a>
     <a href="nosotros.html">Nosotros</a>
     <a href="calidad.html">Calidad</a>
     <a href="contacto.html">Contacto</a>
-    <a href="contacto.html" class="bg-accent-orange px-8 py-3 text-white font-bold rounded">Cotizar Ahora</a>
 </div>
 
-<!-- Navigation -->
-<nav id="navbar" class="fixed top-0 w-full z-50 bg-white border-b border-slate-200 transition-all duration-300">
-    <div class="flex justify-between items-center h-20 px-8 max-w-7xl mx-auto">
-        <a href="index.html">
-            <img alt="INCORLASER S.A.C Logo" class="h-12 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/ADBb0uig0Z3rmSGWd-IrF96ZHRuRnPAjYUZQQieIaMf10FtXEssE2wAH5gvwLFRmcefPbSX-owvZ0t60twBnlbGhOf-5xz3iq6sQigZ1ckwc5glQe2cXNt8i4d2TSX3XPb28HIOu7Kdjdmiws2ErNHoVmCqHVs_vtDV8vu1x3i3sdkFi6j8PIE6u-N-Fs15G_cM1wSDsVGUYScuN3RaE3VDaSY7GPsIFgEMB4yH1sRTS7v4yTrozcpUn0lmlU977Z85crkLfF0VP4zC_Yw"/>
-        </a>
-        <div class="hidden md:flex items-center space-x-8">
-            <a class="text-sm font-semibold tracking-tight text-slate-500 hover:text-primary transition-colors" href="index.html">Inicio</a>
-            <a class="text-sm font-semibold tracking-tight text-primary border-b-2 border-accent-orange pb-1" href="servicios.html">Servicios</a>
-            <a class="text-sm font-semibold tracking-tight text-slate-500 hover:text-primary transition-colors" href="nosotros.html">Nosotros</a>
-            <a class="text-sm font-semibold tracking-tight text-slate-500 hover:text-primary transition-colors" href="calidad.html">Calidad</a>
-            <a class="text-sm font-semibold tracking-tight text-slate-500 hover:text-primary transition-colors" href="contacto.html">Contacto</a>
-        </div>
-        <div class="flex items-center gap-4">
-            <a href="contacto.html" class="hidden sm:block bg-accent-orange text-white px-6 py-2.5 font-bold text-sm tracking-tight hover:opacity-90 transition-all rounded shadow-lg shadow-accent-orange/20">Solicitar Cotización</a>
-            <button id="hamburger" class="md:hidden text-primary">
-                <span class="material-symbols-outlined">menu</span>
-            </button>
-        </div>
-    </div>
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-white border-b border-[#748083]/20">
+<div class="flex justify-between items-center h-16 px-8 w-full max-w-7xl mx-auto">
+<div class="text-xl font-headline"><img alt="INCORLASER S.A.C Logo" class="h-12 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/ADBb0uig0Z3rmSGWd-IrF96ZHRuRnPAjYUZQQieIaMf10FtXEssE2wAH5gvwLFRmcefPbSX-owvZ0t60twBnlbGhOf-5xz3iq6sQigZ1ckwc5glQe2cXNt8i4d2TSX3XPb28HIOu7Kdjdmiws2ErNHoVmCqHVs_vtDV8vu1x3i3sdkFi6j8PIE6u-N-Fs15G_cM1wSDsVGUYScuN3RaE3VDaSY7GPsIFgEMB4yH1sRTS7v4yTrozcpUn0lmlU977Z85crkLfF0VP4zC_Yw"/></div>
+<div class="hidden md:flex items-center space-x-8">
+<a class="font-manrope text-sm font-semibold tracking-tight text-[#748083] hover:text-[#001F58] transition-colors" href="index.html">Inicio</a>
+<a class="font-manrope text-sm font-semibold tracking-tight text-[#FF6A00] border-b-2 border-[#FF6A00] pb-1" href="servicios.html">Servicios</a>
+<a class="font-manrope text-sm font-semibold tracking-tight text-[#748083] hover:text-[#001F58] transition-colors" href="nosotros.html">Nosotros</a>
+<a class="font-manrope text-sm font-semibold tracking-tight text-[#748083] hover:text-[#001F58] transition-colors" href="calidad.html">Calidad</a>
+<a class="font-manrope text-sm font-semibold tracking-tight text-[#748083] hover:text-[#001F58] transition-colors" href="contacto.html">Contacto</a>
+</div>
+<div class="flex items-center gap-4">
+    <a href="contacto.html" class="bg-[#FF6A00] text-white px-6 py-2 font-manrope text-sm font-bold tracking-tight hover:opacity-90 transition-all rounded">
+                    Solicitar Cotización
+    </a>
+    <button id="hamburger" class="md:hidden text-navy"><span class="material-symbols-outlined">menu</span></button>
+</div>
+</div>
 </nav>
-
-<main class="pt-20">
-    <!-- Hero Section -->
-    <section class="relative h-[614px] flex items-center overflow-hidden bg-[#001F58] italic font-bold">
-        <div class="absolute inset-0 opacity-40">
-            <img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDd5mfAYhLbpwIYYGxj-Kcz6hAcaMkMYjvD8QIZdQ8eM6kzGhkjre_E7_rWs5_5T9uXRIotEWs6clNvI-xw4nfdqRun4DjbZEN8xOXfJD5s7rWbiL8WCrFc4W9j1IOdif6oIefbAEF8_kyM2mru1RJZKAUTiBO-WUmmhXySgeQGtOg8Y7FWtvtrtnDqT9FvTJMfLzA1Aspp_6_jiVbxIYs3VnVZPkvp68-cqKSUWlzceNXyV04hrojAfH01dRCYUKzaXc3VJx-4pTFO"/>
-        </div>
-        <div class="relative max-w-7xl mx-auto px-6 w-full">
-            <div class="max-w-3xl">
-                <span class="inline-block px-3 py-1 mb-6 text-xs font-bold tracking-[0.2em] uppercase bg-accent-orange text-white rounded-sm">Infraestructura de Vanguardia</span>
-                <h1 class="text-5xl md:text-7xl font-headline font-black text-white tracking-tighter mb-6 leading-tight underline">
-                    Soluciones Integrales <br/>en Metalmecánica.
-                </h1>
-                <p class="text-xl text-white/80 max-w-xl leading-relaxed">
-                    Transformamos la industria con tecnología de última generación. Desde el diseño conceptual hasta la soldadura de alta precisión.
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Services Section -->
-    <section class="py-24 bg-white italic font-bold">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="flex flex-col gap-12">
-                <!-- Service 1: Corte Láser -->
-                <div class="bg-slate-50 overflow-hidden flex flex-col lg:flex-row shadow-xl border border-slate-200">
-                    <div class="lg:w-3/5 p-10 lg:p-16 flex flex-col justify-center">
-                        <div class="flex items-center gap-3 mb-6">
-                            <span class="material-symbols-outlined text-accent-orange text-3xl">bolt</span>
-                            <span class="text-xs font-bold tracking-[0.3em] uppercase text-gray-500">Capacidad Máxima Regional</span>
-                        </div>
-                        <h3 class="text-4xl lg:text-5xl font-black text-primary mb-6 underline uppercase">Corte Láser de Fibra</h3>
-                        <p class="text-lg text-gray-600 leading-relaxed mb-8">Nuestra planta cuenta con la tecnología de corte más potente del mercado, permitiendo procesar grandes espesores con una velocidad y precisión inigualables.</p>
-                        <div class="grid grid-cols-2 md:grid-cols-3 gap-8 mb-10">
-                            <div>
-                                <div class="text-3xl font-black text-accent-orange">30kW</div>
-                                <div class="text-[10px] font-bold uppercase tracking-widest text-gray-400">Potencia Corte</div>
-                            </div>
-                            <div>
-                                <div class="text-3xl font-black text-primary">10x3m</div>
-                                <div class="text-[10px] font-bold uppercase tracking-widest text-gray-400">Mesa de Trabajo</div>
-                            </div>
-                            <div>
-                                <div class="text-3xl font-black text-primary">±0.05mm</div>
-                                <div class="text-[10px] font-bold uppercase tracking-widest text-gray-400">Precisión</div>
-                            </div>
-                        </div>
-                        <a href="contacto.html" class="w-fit flex items-center text-sm font-bold uppercase tracking-widest text-accent-orange hover:gap-4 transition-all group">
-                            Ver Especificaciones Técnicas 
-                            <span class="material-symbols-outlined text-sm ml-2 group-hover:translate-x-1 transition-transform">arrow_forward</span>
-                        </a>
-                    </div>
-                    <div class="lg:w-2/5 min-h-[400px] relative">
-                        <img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCP3usJZmuzT1mHt-IyRnun9Ech4ZtGSW-C90_03eL4bxsEfpLPxt2MfF1TDD9DA22c6nkr0FnKNnnxX4uKhXQ4AZ-UpSNO9dcl0eVqwj_buFbv1EXPsXcj8vRJ32UnXw1a6RitAR5w_soydSEqfjXQoyQi5nwD2mS_thmLUMDFGg92qY6tT2dl3BWM-aW-dfg_hpuxfg6uRKtL9e062znrM2YacoLQMXAHB_WrH5riRhu_ZcYOkHCHbXT48nXd0Hy-jW9fluQqG-kf"/>
-                    </div>
-                </div>
-
-                <!-- Secondary Services -->
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
-                    <div class="bg-primary text-white p-10 lg:p-14 shadow-xl border-t-4 border-accent-orange">
-                        <h3 class="text-3xl font-black mb-6 underline">Soldadura de Precisión</h3>
-                        <p class="text-white/70 leading-relaxed mb-8">Especialistas en procesos TIG, MIG y soldadura automatizada para componentes estructurales y estéticos.</p>
-                        <ul class="space-y-4 mb-8">
-                            <li class="flex items-center gap-3">
-                                <span class="material-symbols-outlined text-accent-orange">verified</span>
-                                <span class="text-sm font-bold">Homologación AWS</span>
-                            </li>
-                        </ul>
-                        <a href="contacto.html" class="bg-accent-orange text-white px-8 py-3 font-bold text-xs uppercase hover:opacity-90 transition-all">Consultar Servicio</a>
-                    </div>
-                    <div class="bg-slate-100 p-10 lg:p-14 shadow-xl border-t-4 border-primary">
-                        <h3 class="text-3xl font-black text-primary mb-6 underline">Diseño de Ingeniería</h3>
-                        <p class="text-gray-600 leading-relaxed mb-8">De la idea al plano de fabricación. Optimización de materiales para reducir costos.</p>
-                        <div class="space-y-4 mb-8">
-                            <div class="bg-white p-4 border-l-4 border-primary">
-                                <div class="text-primary font-bold">Modelado 3D & Simulación</div>
-                            </div>
-                        </div>
-                        <a href="contacto.html" class="bg-primary text-white px-8 py-3 font-bold text-xs uppercase hover:opacity-90 transition-all">Iniciar Análisis</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Final CTA -->
-    <section class="py-32 bg-slate-50 italic font-bold">
-        <div class="max-w-7xl mx-auto px-6 text-center">
-            <h2 class="text-5xl md:text-7xl font-black text-primary tracking-tighter mb-8 leading-none underline uppercase">¿LISTO PARA <br/>LA EJECUCIÓN?</h2>
-            <p class="text-xl text-gray-500 max-w-2xl mx-auto mb-12">Cotización en menos de 4 horas para proyectos industriales complejos.</p>
-            <div class="flex flex-col md:flex-row gap-4 justify-center">
-                <a href="contacto.html" class="bg-accent-orange text-white px-10 py-5 font-bold text-lg hover:opacity-90 transition-all rounded shadow-xl">Iniciar Análisis de Proyecto</a>
-                <a href="docs/brochure-incorlaser.pdf" download class="bg-primary text-white px-10 py-5 font-bold text-lg hover:opacity-90 transition-all rounded shadow-xl">Descargar Brochure Técnico</a>
-            </div>
-        </div>
-    </section>
+<main class="pt-16">
+<!-- Hero Section -->
+<section class="relative h-[614px] flex items-center overflow-hidden bg-navy">
+<div class="absolute inset-0 opacity-40">
+<img class="w-full h-full object-cover" data-alt="Operación industrial de corte láser de alta potencia" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDd5mfAYhLbpwIYYGxj-Kcz6hAcaMkMYjvD8QIZdQ8eM6kzGhkjre_E7_rWs5_5T9uXRIotEWs6clNvI-xw4nfdqRun4DjbZEN8xOXfJD5s7rWbiL8WCrFc4W9j1IOdif6oIefbAEF8_kyM2mru1RJZKAUTiBO-WUmmhXySgeQGtOg8Y7FWtvtrtnDqT9FvTJMfLzA1Aspp_6_jiVbxIYs3VnVZPkvp68-cqKSUWlzceNXyV04hrojAfH01dRCYUKzaXc3VJx-4pTFO"/>
+</div>
+<div class="relative max-w-7xl mx-auto px-6 w-full">
+<div class="max-w-3xl">
+<span class="inline-block px-3 py-1 mb-6 text-xs font-bold tracking-[0.2em] uppercase bg-primary text-white rounded-sm">Infraestructura de Vanguardia</span>
+<h1 class="text-5xl md:text-7xl font-headline font-extrabold text-white tracking-tighter mb-6 leading-tight uppercase underline">
+                        Soluciones Integrales <br/>en Metalmecánica.
+                    </h1>
+<p class="text-xl text-white/80 max-w-xl leading-relaxed italic">
+                        Transformamos la industria con tecnología de última generación. Desde el diseño conceptual hasta la soldadura de alta precisión.
+                    </p>
+</div>
+</div>
+</section>
+<!-- Services Section -->
+<section class="py-24 bg-surface">
+<div class="max-w-7xl mx-auto px-6">
+<div class="flex flex-col gap-12">
+<!-- Service 1: Corte Láser (Highlighted) -->
+<div class="bg-surface-container-lowest overflow-hidden flex flex-col lg:flex-row shadow-xl border border-outline/10">
+<div class="lg:w-3/5 p-10 lg:p-16 flex flex-col justify-center">
+<div class="flex items-center gap-3 mb-6">
+<span class="material-symbols-outlined text-primary text-3xl" style="font-variation-settings: 'FILL' 1;">bolt</span>
+<span class="text-xs font-bold tracking-[0.3em] uppercase text-on-surface-variant font-label">Capacidad Máxima Regional</span>
+</div>
+<h3 class="text-4xl lg:text-5xl font-headline font-black text-navy mb-6 uppercase underline">Corte Láser de Fibra</h3>
+<p class="text-lg text-on-surface-variant leading-relaxed mb-8 italic">Nuestra planta cuenta con la tecnología de corte más potente del mercado, permitiendo procesar grandes espesores con una velocidad y precisión inigualables.</p>
+<div class="grid grid-cols-2 md:grid-cols-3 gap-8 mb-10">
+<div>
+<div class="text-3xl font-black text-primary">30kW</div>
+<div class="text-[10px] font-bold uppercase tracking-widest text-on-surface-variant">Potencia de Corte</div>
+</div>
+<div>
+<div class="text-3xl font-black text-navy">10x3m</div>
+<div class="text-[10px] font-bold uppercase tracking-widest text-on-surface-variant">Mesa de Trabajo</div>
+</div>
+<div class="col-span-2 md:col-span-1">
+<div class="text-3xl font-black text-navy">±0.05mm</div>
+<div class="text-[10px] font-bold uppercase tracking-widest text-on-surface-variant">Precisión Repetible</div>
+</div>
+</div>
+<a href="contacto.html" class="w-fit flex items-center text-sm font-bold uppercase tracking-widest text-primary hover:gap-4 transition-all group">
+                                Ver Especificaciones Técnicas 
+                                <span class="material-symbols-outlined text-sm ml-2 group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</a>
+</div>
+<div class="lg:w-2/5 min-h-[400px] relative">
+<img class="w-full h-full object-cover" data-alt="Máquina de corte láser industrial de gran formato" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCP3usJZmuzT1mHt-IyRnun9Ech4ZtGSW-C90_03eL4bxsEfpLPxt2MfF1TDD9DA22c6nkr0FnKNnnxX4uKhXQ4AZ-UpSNO9dcl0eVqwj_buFbv1EXPsXcj8vRJ32UnXw1a6RitAR5w_soydSEqfjXQoyQi5nwD2mS_thmLUMDFGg92qY6tT2dl3BWM-aW-dfg_hpuxfg6uRKtL9e062znrM2YacoLQMXAHB_WrH5riRhu_ZcYOkHCHbXT48nXd0Hy-jW9fluQqG-kf"/>
+<div class="absolute inset-0 bg-gradient-to-r from-surface-container-lowest/20 to-transparent"></div>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+<!-- Service 2: Soldadura de Precisión -->
+<div class="group flex flex-col bg-navy text-white p-10 lg:p-14 transition-all hover:translate-y-[-4px]">
+<div class="mb-10">
+<div class="w-16 h-1 w-primary bg-primary mb-6"></div>
+<h3 class="text-3xl font-headline font-bold mb-6 uppercase underline">Soldadura de Precisión</h3>
+<p class="text-white/70 leading-relaxed mb-8 italic">Especialistas en procesos TIG, MIG y soldadura automatizada para componentes estructurales y estéticos.</p>
+<ul class="space-y-4">
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-xl">verified</span>
+<span class="text-sm font-semibold">Homologación de procesos AWS</span>
+</li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-xl">verified</span>
+<span class="text-sm font-semibold">Inspección por líquidos penetrantes</span>
+</li>
+</ul>
+</div>
+<div class="mt-auto overflow-hidden">
+<img class="w-full h-64 object-cover grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700" data-alt="Proceso de soldadura industrial especializada" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCvR_rKPExsk8dPiQ_XQ4gl19PQzKenMR01YcOMP4IapJCsDyCqUEuYFunTxrzF5p9-GVVhENWv4c-GPz4JynosgJSVW6N8P-CAmata9PmN3BVh03YjYrqJMX3fg0hiIwCKNs8R8HLdm93ZrXrr8OnRGqS1eNexmNfFZ5epNBu5RAOCYFxAcMC323mQJ2vU_BQJ5Mz7om8Vtstplfa4uqEmBK4lermIq29KW8pqrY8ZA0hWtNmyg1sbQjFmM5oAbGrISvJV_K9AGP3G"/>
+</div>
+</div>
+<!-- Service 3: Diseño de Ingeniería -->
+<div class="flex flex-col bg-surface-container-low border-t-4 border-primary p-10 lg:p-14">
+<div class="mb-10">
+<span class="material-symbols-outlined text-navy text-4xl mb-6">architecture</span>
+<h3 class="text-3xl font-headline font-bold text-navy mb-6 uppercase underline">Diseño de Ingeniería</h3>
+<p class="text-on-surface-variant leading-relaxed mb-8 italic">De la idea al plano de fabricación. Optimizamos sus diseños para manufactura (DFM).</p>
+<div class="space-y-6 italic">
+<div class="bg-white p-6 shadow-sm border-l-4 border-navy">
+<div class="text-navy font-bold mb-1">Modelado 3D &amp; Simulación</div>
+<div class="text-xs uppercase tracking-wider text-on-surface-variant">SolidWorks &amp; AutoCAD Especializado</div>
+</div>
+<div class="bg-white p-6 shadow-sm border-l-4 border-navy">
+<div class="text-navy font-bold mb-1">Desarrollo de Prototipos</div>
+<div class="text-xs uppercase tracking-wider text-on-surface-variant">Validación funcional en 24-48 horas</div>
+</div>
+</div>
+</div>
+<div class="mt-auto">
+<img class="w-full h-64 object-cover" data-alt="Estación de trabajo CAD de ingeniería industrial" src="https://lh3.googleusercontent.com/aida-public/AB6AXuByOEqn3WluiWnue30ZkTnyQdw6_1Z1tdZc03h7eS15_bPLCkzAcfTx_A8OD2Bq_4TcfKFNbydc3y2KTlZy1hnvgCA5Uob5i-L-sEplXcHGVLymYDinJMQNnxDh-BZO9TUIxEmuXWr2--cDNLOgaibuKeIrMszcJh9Ago592apmh6Odh0eHZbALiD5jDI-9b4oilbYzvVzCPN8GgR063MsYbezbNEHBe6PdU54-O_Dep8GDLrGty7_u3yooGwrqsXoyrDDkySSW9W3P"/>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Technical Capabilities Stats -->
+<section class="py-20 bg-navy text-white italic font-bold">
+<div class="max-w-7xl mx-auto px-6">
+<div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
+<div class="max-w-xl">
+<h2 class="text-4xl font-headline font-extrabold tracking-tight mb-4 uppercase underline">Estándares Métricos de Precisión</h2>
+<p class="text-white/70 text-lg leading-relaxed italic">Cada componente pasa por nuestro laboratorio de control de calidad garantizando ISO 9001:2015.</p>
+</div>
+<div class="flex gap-4">
+<div class="w-12 h-12 border border-white/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-sm text-primary">precision_manufacturing</span>
+</div>
+<div class="w-12 h-12 border border-white/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-sm text-primary">verified</span>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-12 border-t border-white/10 pt-12">
+<div>
+<div class="text-4xl md:text-6xl font-headline font-black text-primary mb-2 italic">±0.05</div>
+<div class="text-xs font-bold uppercase tracking-widest text-white/50">Tolerancia (mm)</div>
+</div>
+<div>
+<div class="text-4xl md:text-6xl font-headline font-black text-white mb-2 italic">30kW</div>
+<div class="text-xs font-bold uppercase tracking-widest text-white/50">Potencia Máxima</div>
+</div>
+<div>
+<div class="text-4xl md:text-6xl font-headline font-black text-white mb-2 italic">24/7</div>
+<div class="text-xs font-bold uppercase tracking-widest text-white/50">Operatividad Continua</div>
+</div>
+<div>
+<div class="text-4xl md:text-6xl font-headline font-black text-white mb-2 italic">100%</div>
+<div class="text-xs font-bold uppercase tracking-widest text-white/50">Trazabilidad</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Final CTA Section -->
+<section class="py-32 bg-surface overflow-hidden relative italic font-bold">
+<div class="max-w-7xl mx-auto px-6 text-center relative z-10">
+<h2 class="text-5xl md:text-7xl font-headline font-black text-navy tracking-tighter mb-8 leading-none uppercase underline italic">¿LISTO PARA <br/>LA EJECUCIÓN?</h2>
+<p class="text-xl text-on-surface-variant max-w-2xl mx-auto mb-12 italic">Cotización en menos de 4 horas para proyectos industriales complejos.</p>
+<div class="flex flex-col md:flex-row gap-4 justify-center">
+<a href="contacto.html" class="bg-[#FF6A00] text-white px-10 py-5 font-headline font-bold text-lg hover:opacity-90 transition-all rounded shadow-xl">Iniciar Análisis de Proyecto</a>
+<a href="docs/brochure-incorlaser.pdf" download class="bg-navy text-white px-10 py-5 font-headline font-bold text-lg hover:opacity-90 transition-all rounded shadow-xl">Descargar Guía de Materiales</a>
+</div>
+</div>
+</section>
 </main>
-
-<footer class="bg-primary text-white py-16 border-t border-white/5 uppercase italic font-bold">
-    <div class="max-w-7xl mx-auto px-8 grid grid-cols-1 md:grid-cols-2 gap-12 font-bold italic">
-        <div>
-            <div class="text-2xl font-black tracking-tighter uppercase underline mb-6">INCORLASER S.A.C</div>
-            <p class="text-[10px] font-bold uppercase tracking-[0.2em] opacity-40">RUC 20614188295 | Urb. Santa Amelia Mza. B Lote 5, Comas, Lima – Perú</p>
-        </div>
-        <div class="flex flex-col md:items-end justify-end opacity-40">
-            <nav class="flex gap-6 mb-8">
-                <a href="index.html" class="hover:text-accent-orange">Inicio</a>
-                <a href="nosotros.html" class="hover:text-accent-orange">Nosotros</a>
-                <a href="calidad.html" class="hover:text-accent-orange">Calidad</a>
-                <a href="contacto.html" class="hover:text-accent-orange">Contacto</a>
-            </nav>
-            <p class="text-[10px] uppercase tracking-widest font-bold">
-                © <span id="current-year">2026</span> INCORLASER S.A.C. | TODOS LOS DERECHOS RESERVADOS
-            </p>
-        </div>
-    </div>
+<!-- Footer -->
+<footer class="bg-[#001F58] text-white py-16 italic font-bold uppercase">
+<div class="max-w-7xl mx-auto px-6">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+<div class="col-span-1 md:col-span-2">
+<h2 class="text-2xl font-headline font-black tracking-tighter uppercase mb-6 underline">INCORLASER S.A.C</h2>
+<div class="space-y-2 text-[10px] text-white/60 font-body max-w-md leading-relaxed tracking-widest">
+<p>Urb. Santa Amelia Mza. B Lote 5, Comas, Lima – Perú</p>
+<p>RUC: 20614188295</p>
+</div>
+</div>
+<div class="opacity-40">
+<h4 class="text-xs font-bold uppercase tracking-[0.2em] mb-6 text-primary">Enlaces</h4>
+<ul class="space-y-4">
+<li><a class="text-sm text-white/70 hover:text-white transition-colors" href="index.html">Inicio</a></li>
+<li><a class="text-sm text-white/70 hover:text-white transition-colors" href="servicios.html">Servicios</a></li>
+<li><a class="text-sm text-white/70 hover:text-white transition-colors" href="nosotros.html">Nosotros</a></li>
+<li><a class="text-sm text-white/70 hover:text-white transition-colors" href="calidad.html">Calidad</a></li>
+<li><a class="text-sm text-white/70 hover:text-white transition-colors" href="contacto.html">Contacto</a></li>
+</ul>
+</div>
+<div class="opacity-40">
+<h4 class="text-xs font-bold uppercase tracking-[0.2em] mb-6 text-primary">Legal</h4>
+<ul class="space-y-4">
+<li><a class="text-sm text-white/70 hover:text-white transition-colors" href="#">Privacidad</a></li>
+<li><a class="text-sm text-white/70 hover:text-white transition-colors" href="#">Términos</a></li>
+</ul>
+</div>
+</div>
+<div class="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4 opacity-30">
+<p class="text-xs text-white/40 uppercase tracking-widest font-medium">
+        © <span id="current-year">2026</span> INCORLASER. Excelencia Técnica e Integridad Industrial.
+      </p>
+</div>
+</div>
 </footer>
-
 <script src="js/main.js"></script>
-</body>
-</html>
+</body></html>

@@ -3,163 +3,201 @@
 <head>
     <meta charset="utf-8"/>
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-    <title>Calidad y Precisión | INCORLASER S.A.C. - Protocolos Industriales</title>
-    <meta name="description" content="Garantizamos precisión milimétrica de 0.06mm con cabezales Precitec. Protocolos de calidad rigurosos."/>
-    
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+    <title>Calidad y Precisión | INCORLASER S.A.C.</title>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-    <link rel="stylesheet" href="css/styles.css">
-
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <script id="tailwind-config">
-      tailwind.config = {
-        darkMode: "class",
-        theme: {
-          extend: {
-            "colors": {
-              "primary": "#001F58",
-              "accent-orange": "#FF6A00",
-              "surface": "#f7fafb",
-              "on-surface": "#181c1d"
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-low": "#f1f4f5",
+                        "surface-container-highest": "#e0e3e4",
+                        "on-tertiary-container": "#e86000",
+                        "background": "#f7fafb",
+                        "on-secondary-container": "#5b6669",
+                        "surface-container-high": "#e5e9ea",
+                        "error-container": "#ffdad6",
+                        "primary": "#000b2b",
+                        "on-secondary": "#ffffff",
+                        "on-primary-fixed-variant": "#2d447e",
+                        "surface-bright": "#f7fafb",
+                        "on-primary": "#ffffff",
+                        "inverse-primary": "#b2c5ff",
+                        "secondary-fixed": "#d8e5e8",
+                        "secondary": "#556063",
+                        "inverse-on-surface": "#eef1f2",
+                        "secondary-fixed-dim": "#bcc9cc",
+                        "on-tertiary": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "on-surface-variant": "#444650",
+                        "on-error": "#ffffff",
+                        "on-primary-container": "#7389c7",
+                        "primary-container": "#001f58",
+                        "inverse-surface": "#2d3132",
+                        "on-secondary-fixed": "#121d20",
+                        "on-tertiary-fixed-variant": "#7b2f00",
+                        "surface-dim": "#d7dadb",
+                        "primary-fixed-dim": "#b2c5ff",
+                        "primary-fixed": "#dae2ff",
+                        "on-background": "#181c1d",
+                        "surface-variant": "#e0e3e4",
+                        "surface-container": "#ebeeef",
+                        "surface-tint": "#465c97",
+                        "on-secondary-fixed-variant": "#3d494b",
+                        "secondary-container": "#d8e5e8",
+                        "surface": "#f7fafb",
+                        "error": "#ba1a1a",
+                        "tertiary": "#1e0600",
+                        "tertiary-fixed": "#ffdbcc",
+                        "outline": "#757781",
+                        "on-primary-fixed": "#001848",
+                        "on-tertiary-fixed": "#351000",
+                        "outline-variant": "#c5c6d1",
+                        "tertiary-container": "#411600",
+                        "surface-container-lowest": "#ffffff",
+                        "on-surface": "#181c1d",
+                        "tertiary-fixed-dim": "#ffb694"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "fontFamily": {
+                        "h2": ["Manrope"],
+                        "h1": ["Manrope"],
+                        "body-md": ["Manrope"],
+                        "body-lg": ["Manrope"],
+                        "technical-data": ["Manrope"],
+                        "label-caps": ["Manrope"],
+                        "h3": ["Manrope"]
+                    }
+                },
             },
-            "borderRadius": {
-              "DEFAULT": "0.125rem",
-              "lg": "0.25rem",
-              "xl": "0.5rem"
-            },
-            "fontFamily": {
-              "headline": ["Manrope"],
-              "body": ["Inter"]
-            }
-          },
-        },
-      }
+        }
     </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            vertical-align: middle;
+        }
+    </style>
 </head>
-<body class="bg-surface text-on-surface antialiased uppercase">
+<body class="font-body-md text-on-surface uppercase italic font-bold">
 
 <!-- Mobile Menu Overlay -->
-<div id="mobile-menu" class="mobile-menu font-bold italic">
+<div id="mobile-menu" class="hidden fixed inset-0 z-[60] bg-primary/95 text-white p-8 flex flex-col gap-6 text-2xl font-black italic uppercase">
+    <button id="close-menu" class="self-end"><span class="material-symbols-outlined text-4xl">close</span></button>
     <a href="index.html">Inicio</a>
     <a href="servicios.html">Servicios</a>
     <a href="nosotros.html">Nosotros</a>
     <a href="calidad.html">Calidad</a>
     <a href="contacto.html">Contacto</a>
-    <a href="contacto.html" class="bg-accent-orange px-8 py-3 text-white font-bold rounded">Cotizar Ahora</a>
 </div>
 
-<!-- Navigation -->
-<nav id="navbar" class="fixed top-0 w-full z-50 bg-white border-b border-slate-200 transition-all duration-300">
-    <div class="flex justify-between items-center h-20 px-8 max-w-7xl mx-auto w-full">
-        <a href="index.html">
-            <img alt="INCORLASER Logo" class="h-12 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/ADBb0uig0Z3rmSGWd-IrF96ZHRuRnPAjYUZQQieIaMf10FtXEssE2wAH5gvwLFRmcefPbSX-owvZ0t60twBnlbGhOf-5xz3iq6sQigZ1ckwc5glQe2cXNt8i4d2TSX3XPb28HIOu7Kdjdmiws2ErNHoVmCqHVs_vtDV8vu1x3i3sdkFi6j8PIE6u-N-Fs15G_cM1wSDsVGUYScuN3RaE3VDaSY7GPsIFgEMB4yH1sRTS7v4yTrozcpUn0lmlU977Z85crkLfF0VP4zC_Yw"/>
-        </a>
-        <div class="hidden md:flex space-x-8 items-center">
-            <a class="text-sm font-semibold tracking-tight text-slate-500 hover:text-primary transition-all" href="index.html">Inicio</a>
-            <a class="text-sm font-semibold tracking-tight text-slate-500 hover:text-primary transition-all" href="servicios.html">Servicios</a>
-            <a class="text-sm font-semibold tracking-tight text-slate-500 hover:text-primary transition-all" href="nosotros.html">Nosotros</a>
-            <a class="text-primary border-b-2 border-accent-orange pb-1 font-semibold text-sm tracking-tight" href="calidad.html">Calidad</a>
-            <a class="text-sm font-semibold tracking-tight text-slate-500 hover:text-primary transition-all" href="contacto.html">Contacto</a>
-            <a href="contacto.html" class="bg-accent-orange text-white px-6 py-2.5 font-bold text-sm uppercase hover:bg-orange-700 transition-all shadow-lg shadow-accent-orange/20">Solicitar Cotización</a>
-        </div>
-        <button id="hamburger" class="md:hidden text-primary">
-            <span class="material-symbols-outlined">menu</span>
-        </button>
-    </div>
+<!-- TopAppBar -->
+<header class="bg-white fixed top-0 w-full z-50 border-b border-gray-300/30">
+<div class="flex justify-between items-center h-20 px-8 max-w-screen-2xl mx-auto w-full font-manrope antialiased tracking-tight">
+<div class="text-xl font-extrabold text-[#001F58] uppercase tracking-widest"><img alt="INCORLASER S.A.C" class="h-12 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/ADBb0uig0Z3rmSGWd-IrF96ZHRuRnPAjYUZQQieIaMf10FtXEssE2wAH5gvwLFRmcefPbSX-owvZ0t60twBnlbGhOf-5xz3iq6sQigZ1ckwc5glQe2cXNt8i4d2TSX3XPb28HIOu7Kdjdmiws2ErNHoVmCqHVs_vtDV8vu1x3i3sdkFi6j8PIE6u-N-Fs15G_cM1wSDsVGUYScuN3RaE3VDaSY7GPsIFgEMB4yH1sRTS7v4yTrozcpUn0lmlU977Z85crkLfF0VP4zC_Yw"/></div>
+<nav class="hidden md:flex items-center space-x-8">
+<a class="text-gray-600 hover:text-[#001F58] transition-colors cursor-pointer active:opacity-80" href="index.html">Inicio</a>
+<a class="text-gray-600 hover:text-[#001F58] transition-colors cursor-pointer active:opacity-80" href="servicios.html">Servicios</a>
+<a class="text-gray-600 hover:text-[#001F58] transition-colors cursor-pointer active:opacity-80" href="nosotros.html">Nosotros</a>
+<a class="text-[#001F58] font-bold border-b-2 border-[#001F58] pb-1 cursor-pointer active:opacity-80" href="calidad.html">Calidad</a>
+<a class="text-gray-600 hover:text-[#001F58] transition-colors cursor-pointer active:opacity-80" href="contacto.html">Contacto</a>
+<a href="contacto.html" class="bg-[#001F58] text-white px-6 py-2 text-xs uppercase font-bold tracking-widest hover:bg-primary-container transition-all cursor-pointer active:opacity-80">
+                    Cotizar Ahora
+</a>
 </nav>
-
+<button id="hamburger" class="md:hidden text-primary">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</header>
 <main class="pt-20">
-    <!-- Hero Section -->
-    <section class="relative h-[600px] flex items-center overflow-hidden bg-primary italic font-bold">
-        <div class="absolute inset-0 z-0">
-            <img alt="Fondo Industrial Calidad" class="w-full h-full object-cover opacity-40" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAK5zUhvCZv6HsueMMRv6lDWadbQGsS69KqfgJjXyJge88P07j0zx9xBo9lZa9hqYlyPAZjoLK0gx4P8EEH0jaId0KKGrEa1rJK7KEsHJoEVuzvlETg0b5Qdg7loFjM5CgjK4bATdS2I1BSffW67BWY0cCXtu4eGOcZiOBvdZl3mk3WWgkKMs7KEg7QYk_0WsLGMKk8epjMqUDwtIdC7adQfxGZ9BnmuPCauhcmkusGOQuZXYug-46DQhvuDPSzsEYJcBBJCjoNDWlp"/>
-        </div>
-        <div class="relative z-10 max-w-7xl mx-auto px-8 w-full">
-            <div class="max-w-3xl">
-                <span class="inline-block py-1 px-3 bg-accent-orange text-white text-[10px] font-bold mb-4 uppercase tracking-widest">Excelencia Industrial</span>
-                <h1 class="text-5xl md:text-7xl font-black text-white mb-6 uppercase underline">Precisión Métrica Garantizada</h1>
-                <p class="text-xl text-white/80 italic font-bold">
-                    Tolerancia de 0.06mm y repetitividad extrema para proyectos de alta complejidad minera.
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Content -->
-    <section class="py-24 bg-white italic font-bold">
-        <div class="max-w-7xl mx-auto px-8">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
-                <div class="border border-slate-200 p-10 bg-slate-50 hover:border-accent-orange transition-all">
-                    <span class="material-symbols-outlined text-4xl text-accent-orange mb-4">fact_check</span>
-                    <h3 class="text-2xl font-black text-primary mb-4 uppercase underline">Materia Prima</h3>
-                    <p class="text-gray-500 text-sm">Inspección exhaustiva y trazabilidad total del material antes del proceso.</p>
-                </div>
-                <div class="border border-slate-200 p-10 bg-slate-50 hover:border-accent-orange transition-all">
-                    <span class="material-symbols-outlined text-4xl text-accent-orange mb-4">straighten</span>
-                    <h3 class="text-2xl font-black text-primary mb-4 uppercase underline">Control Dimensional</h3>
-                    <p class="text-gray-500 text-sm">Validación en tiempo real con instrumentos calibrados contra planos técnicos.</p>
-                </div>
-                <div class="border border-slate-200 p-10 bg-slate-50 hover:border-accent-orange transition-all">
-                    <span class="material-symbols-outlined text-4xl text-accent-orange mb-4">local_shipping</span>
-                    <h3 class="text-2xl font-black text-primary mb-4 uppercase underline">Embalaje Técnico</h3>
-                    <p class="text-gray-500 text-sm">Protección de integridad dimensional para entrega a nivel nacional.</p>
-                </div>
-            </div>
-            
-            <!-- Table -->
-            <div class="overflow-x-auto shadow-2xl">
-                <table class="w-full border-collapse">
-                    <thead>
-                        <tr class="bg-primary text-white">
-                            <th class="p-6 text-left text-xs uppercase tracking-widest">Parámetro</th>
-                            <th class="p-6 text-left text-xs uppercase tracking-widest">Rango</th>
-                            <th class="p-6 text-left text-xs uppercase tracking-widest">Tolerancia</th>
-                        </tr>
-                    </thead>
-                    <tbody class="text-sm divide-y divide-slate-100">
-                        <tr class="hover:bg-slate-50 transition-colors">
-                            <td class="p-6 font-bold text-primary">Corte Lineal</td>
-                            <td class="p-6">Hasta 10,000 mm</td>
-                            <td class="p-6 font-black text-accent-orange">± 0.1 mm</td>
-                        </tr>
-                        <tr class="hover:bg-slate-50 transition-colors">
-                            <td class="p-6 font-bold text-primary">Repetitividad</td>
-                            <td class="p-6">N/A</td>
-                            <td class="p-6 font-black text-accent-orange">± 0.03 mm</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-            
-            <div class="mt-16 text-center">
-                <a href="contacto.html" class="bg-accent-orange text-white px-12 py-4 font-bold uppercase tracking-widest text-sm hover:bg-orange-700 transition-all shadow-xl shadow-orange-500/20">
-                    Solicitar Auditoría de Calidad
-                </a>
-            </div>
-        </div>
-    </section>
+<!-- Hero Section -->
+<section class="relative h-[600px] flex items-center overflow-hidden bg-primary">
+<div class="absolute inset-0 z-0">
+<img alt="Fondo Industrial" class="w-full h-full object-cover opacity-40" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAK5zUhvCZv6HsueMMRv6lDWadbQGsS69KqfgJjXyJge88P07j0zx9xBo9lZa9hqYlyPAZjoLK0gx4P8EEH0jaId0KKGrEa1rJK7KEsHJoEVuzvlETg0b5Qdg7loFjM5CgjK4bATdS2I1BSffW67BWY0cCXtu4eGOcZiOBvdZl3mk3WWgkKMs7KEg7QYk_0WsLGMKk8epjMqUDwtIdC7adQfxGZ9BnmuPCauhcmkusGOQuZXYug-46DQhvuDPSzsEYJcBBJCjoNDWlp"/>
+<div class="absolute inset-0 bg-gradient-to-r from-primary via-primary/80 to-transparent"></div>
+</div>
+<div class="max-w-7xl mx-auto px-8 relative z-10">
+<div class="max-w-2xl">
+<span class="inline-block py-1 px-3 bg-orange-600 text-white text-xs mb-4 uppercase tracking-widest">INGENIERÍA DE PRECISIÓN</span>
+<h1 class="text-6xl font-black text-white mb-6 uppercase underline">Compromiso con la Precisión Métrica</h1>
+<p class="text-xl text-white/80 mb-8 italic">
+                        Nuestra tecnología de corte láser de 30kW garantiza resultados perfectos en cada pieza. Calidad sin concesiones.
+                    </p>
+</div>
+</div>
+</section>
+<!-- Protocolo de Calidad -->
+<section class="py-24 bg-white">
+<div class="max-w-7xl mx-auto px-8">
+<div class="text-center mb-16">
+<h2 class="text-5xl font-black text-primary mb-4 uppercase underline">Protocolo de Calidad Interno</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8 italic font-bold">
+<div class="border border-slate-200 p-8 bg-slate-50">
+<span class="material-symbols-outlined text-4xl text-orange-600 mb-4">inventory_2</span>
+<h3 class="text-2xl font-black text-primary mb-4 uppercase">01. Materia Prima</h3>
+<p class="text-slate-600">Inspección de cada plancha antes del proceso. Verificamos planitud y trazabilidad total.</p>
+</div>
+<div class="border border-slate-200 p-8 bg-slate-50">
+<span class="material-symbols-outlined text-4xl text-orange-600 mb-4">straighten</span>
+<h3 class="text-2xl font-black text-primary mb-4 uppercase">02. Control Dimensional</h3>
+<p class="text-slate-600">Validación en tiempo real mediante instrumentos digitales calibrados según norma ISO.</p>
+</div>
+<div class="border border-slate-200 p-8 bg-slate-50">
+<span class="material-symbols-outlined text-4xl text-orange-600 mb-4">fact_check</span>
+<h3 class="text-2xl font-black text-primary mb-4 uppercase">03. Acabado y Embalaje</h3>
+<p class="text-slate-600">Remoción de rebabas y limpieza técnica. Embalaje industrial para transporte seguro.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Tecnología de Medición -->
+<section class="py-24 bg-slate-50">
+<div class="max-w-7xl mx-auto px-8">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+<div class="relative">
+<img alt="Medición de Precisión" class="w-full aspect-square object-cover border border-slate-200" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBq39Oa4sb1Lazc7g_OzniRIuoHxdiB3rYut5evJKxGk41r_9ZxKEhj0vvOAYX_7Y5RO6_2lBAow8e9a3f13lMc-Yu-MZDOJ1FDEGiJ5iTt_5Dtopxmk9-DoKOciSVrxxU8hyh5bL_KdteXNortNQ0SueuOn9U4lo8KgWvXEho7c6iQ9g42cJXhZOVPzc-Py-0-YToHDme8fE4gW8GKeOqH6tOjNdA7reJcYUAFRI1tYfM-70YPSwL-r4QbYnP99PzjAoTSGsj1TUrP"/>
+<div class="absolute -bottom-6 -right-6 bg-primary text-white p-8 border-4 border-orange-600">
+<div class="text-5xl font-black">0.06<span class="text-lg">mm</span></div>
+<div class="text-xs uppercase tracking-widest">PRECISIÓN MECÁNICA</div>
+</div>
+</div>
+<div>
+<h2 class="text-4xl font-black text-primary mb-6 uppercase underline">Tecnología de Medición Superior</h2>
+<p class="text-xl text-slate-600 mb-8 italic">Cabezales PRECITEC integrados para un monitoreo constante del punto focal y estabilidad térmica.</p>
+<div class="space-y-6">
+<div class="flex items-center gap-4 p-6 bg-white border border-slate-200">
+<span class="material-symbols-outlined text-orange-600">biotech</span>
+<div>
+<div class="text-xs font-bold text-primary uppercase">REPETITIVIDAD EXTREMA</div>
+<p class="text-sm text-slate-600 italic">Tolerancia de 0.03 mm garantizada en series industriales.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
 </main>
-
-<footer class="bg-primary text-white py-16 border-t border-white/10 uppercase italic font-bold">
-    <div class="max-w-7xl mx-auto px-8 grid grid-cols-1 md:grid-cols-2 gap-12 font-bold italic">
-        <div>
-            <div class="text-2xl font-black tracking-tighter uppercase underline mb-6">INCORLASER S.A.C</div>
-            <p class="text-[10px] font-bold uppercase tracking-[0.2em] opacity-40">RUC 20614188295 | Urb. Santa Amelia Mza. B Lote 5, Comas, Lima – Perú</p>
-        </div>
-        <div class="flex flex-col md:items-end justify-end opacity-40">
-            <nav class="flex gap-6 mb-8">
-                <a href="index.html" class="hover:text-accent-orange">Inicio</a>
-                <a href="servicios.html" class="hover:text-accent-orange">Servicios</a>
-                <a href="nosotros.html" class="hover:text-accent-orange">Nosotros</a>
-                <a href="contacto.html" class="hover:text-accent-orange">Contacto</a>
-            </nav>
-            <p class="text-[10px] uppercase tracking-widest font-bold">
-                © <span id="current-year">2026</span> INCORLASER S.A.C. | TODOS LOS DERECHOS RESERVADOS
-            </p>
-        </div>
-    </div>
+<!-- Footer -->
+<footer class="bg-slate-950 text-white w-full py-16 border-t border-gray-800 uppercase italic font-bold">
+<div class="max-w-7xl mx-auto px-8 text-center md:text-left">
+<span class="text-xl font-black text-white mb-4 block tracking-tighter underline">INCORLASER S.A.C</span>
+<p class="text-xs tracking-widest text-gray-500">RUC: 20614188295 | Urb. Santa Amelia Mza. B Lote 5, Comas, Lima – Perú</p>
+<div class="mt-8 pt-8 border-t border-white/5 opacity-30">
+<p class="text-[10px] uppercase tracking-[0.2em]">© <span id="current-year">2026</span> INCORLASER S.A.C | Todos los derechos reservados.</p>
+</div>
+</div>
 </footer>
-
 <script src="js/main.js"></script>
-</body>
-</html>
+</body></html>

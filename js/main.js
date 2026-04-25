@@ -8,32 +8,21 @@ document.addEventListener('DOMContentLoaded', () => {
         service: 'ContactForm'
     };
 
-    // Navbar Scroll Effect
-    const navbar = document.getElementById('navbar');
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 50) {
-            navbar?.classList.add('scrolled', 'shadow-md');
-        } else {
-            navbar?.classList.remove('scrolled', 'shadow-md');
-        }
-    });
-
     // Mobile Menu Toggle
     const hamburger = document.getElementById('hamburger');
+    const closeMenu = document.getElementById('close-menu');
     const mobileMenu = document.getElementById('mobile-menu');
-    const menuLinks = mobileMenu?.querySelectorAll('a');
 
     if (hamburger && mobileMenu) {
         hamburger.addEventListener('click', () => {
-            hamburger.classList.toggle('active');
-            mobileMenu.classList.toggle('open');
-            document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : '';
+            mobileMenu.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
         });
 
-        menuLinks?.forEach(link => {
-            link.addEventListener('click', () => {
-                hamburger.classList.remove('active');
-                mobileMenu.classList.remove('open');
+        const closeActions = [closeMenu, ...mobileMenu.querySelectorAll('a')];
+        closeActions.forEach(element => {
+            element?.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
                 document.body.style.overflow = '';
             });
         });
@@ -57,19 +46,27 @@ document.addEventListener('DOMContentLoaded', () => {
             try {
                 submitBtn.disabled = true;
                 submitBtn.innerText = 'ENVIANDO...';
-
-                // Placeholder para integración real con la llave proporcionada
-                // Aquí se conectaría con el endpoint de Stitch/Email Service
-                console.log('Utilizando API Key para envío:', STITCH_CONFIG.key);
                 
-                // Simulación de envío exitoso
+                // Los datos se capturan según los IDs del formulario de Stitch
+                const formData = {
+                    nombre: document.getElementById('name')?.value,
+                    empresa: document.getElementById('company')?.value,
+                    email: document.getElementById('email')?.value,
+                    telefono: document.getElementById('phone')?.value,
+                    servicio: document.getElementById('service')?.value,
+                    detalles: document.getElementById('message')?.value
+                };
+
+                console.log('Enviando datos a Stitch con Key:', STITCH_CONFIG.key, formData);
+                
+                // Simulación de envío exitoso (Aquí iría el fetch real)
                 await new Promise(resolve => setTimeout(resolve, 1500));
                 
                 alert('¡Mensaje enviado con éxito! Un especialista técnico se pondrá en contacto con usted pronto.');
                 contactForm.reset();
             } catch (error) {
                 console.error('Error al enviar:', error);
-                alert('Hubo un error al enviar el mensaje. Por favor, inténtelo de nuevo o contáctenos por teléfono.');
+                alert('Error al enviar. Por favor contáctenos directamente.');
             } finally {
                 submitBtn.disabled = false;
                 submitBtn.innerText = originalBtnText;
