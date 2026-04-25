@@ -7,204 +7,80 @@
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<style>
-        .material-symbols-outlined {
-            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-        }
-        body {
-            font-family: 'Manrope', sans-serif;
-            background-color: #f7fafb;
-        }
-    </style>
 <script id="tailwind-config">
         tailwind.config = {
           darkMode: "class",
           theme: {
             extend: {
               "colors": {
-                      "error": "#ba1a1a",
-                      "primary-container": "#001f58",
-                      "surface-container": "#ebeeef",
-                      "surface-tint": "#465c97",
-                      "secondary": "#556063",
-                      "secondary-fixed-dim": "#bcc9cc",
-                      "primary-fixed": "#dae2ff",
-                      "on-background": "#181c1d",
-                      "outline-variant": "#c5c6d1",
-                      "inverse-primary": "#b2c5ff",
-                      "surface-dim": "#d7dadb",
-                      "on-tertiary": "#ffffff",
-                      "surface-variant": "#e0e3e4",
-                      "on-primary": "#ffffff",
-                      "inverse-on-surface": "#eef1f2",
                       "primary": "#000b2b",
-                      "on-primary-container": "#7389c7",
-                      "on-secondary": "#ffffff",
-                      "on-surface-variant": "#444650",
-                      "surface-container-high": "#e5e9ea",
-                      "surface": "#f7fafb",
-                      "on-error": "#ffffff",
-                      "inverse-surface": "#2d3132",
-                      "on-tertiary-fixed": "#351000",
-                      "surface-container-highest": "#e0e3e4",
-                      "on-tertiary-container": "#e86000",
-                      "surface-bright": "#f7fafb",
-                      "error-container": "#ffdad6",
-                      "background": "#f7fafb",
-                      "surface-container-low": "#f1f4f5",
-                      "tertiary-container": "#411600",
-                      "on-error-container": "#93000a",
-                      "on-primary-fixed-variant": "#2d447e",
-                      "secondary-fixed": "#d8e5e8",
-                      "tertiary": "#1e0600",
-                      "tertiary-fixed": "#ffdbcc",
-                      "on-tertiary-fixed-variant": "#7b2f00",
-                      "on-secondary-container": "#5b6669",
-                      "outline": "#757781",
-                      "on-secondary-fixed": "#121d20",
-                      "on-primary-fixed": "#001848",
-                      "tertiary-fixed-dim": "#ffb694",
-                      "primary-fixed-dim": "#b2c5ff",
-                      "on-surface": "#181c1d",
-                      "on-secondary-fixed-variant": "#3d494b",
-                      "secondary-container": "#d8e5e8",
-                      "surface-container-lowest": "#ffffff"
-              },
-              "borderRadius": {
-                      "DEFAULT": "0.125rem",
-                      "lg": "0.25rem",
-                      "xl": "0.5rem",
-                      "full": "0.75rem"
-              },
-              "spacing": {
-                      "container-max": "1280px",
-                      "gutter": "24px",
-                      "lg": "48px",
-                      "sm": "12px",
-                      "base": "8px",
-                      "xs": "4px",
-                      "xl": "80px",
-                      "md": "24px"
-              },
-              "fontFamily": {
-                      "label-caps": ["Manrope"],
-                      "h3": ["Manrope"],
-                      "body-md": ["Manrope"],
-                      "h2": ["Manrope"],
-                      "technical-data": ["Manrope"],
-                      "body-lg": ["Manrope"],
-                      "h1": ["Manrope"]
-              },
-              "fontSize": {
-                      "label-caps": ["12px", {"lineHeight": "1.2", "letterSpacing": "0.08em", "fontWeight": "700"}],
-                      "h3": ["24px", {"lineHeight": "1.3", "letterSpacing": "0", "fontWeight": "600"}],
-                      "body-md": ["16px", {"lineHeight": "1.5", "letterSpacing": "0", "fontWeight": "400"}],
-                      "h2": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "700"}],
-                      "technical-data": ["14px", {"lineHeight": "1.4", "fontWeight": "500"}],
-                      "body-lg": ["18px", {"lineHeight": "1.6", "letterSpacing": "0", "fontWeight": "400"}],
-                      "h1": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800"}]
+                      "accent-orange": "#FF6A00",
+                      "background": "#f7fafb"
               }
             },
           },
         }
     </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
 </head>
 <body class="bg-background text-on-background antialiased">
 <nav class="bg-white border-b border-slate-200 sticky top-0 z-50">
 <div class="flex justify-between items-center h-20 px-8 max-w-screen-2xl mx-auto">
-<div class="font-black tracking-tighter text-primary font-headline uppercase"><img alt="INCORLASER S.A.C Logo" class="h-12 w-auto object-contain" src="img/logo.png"/></div>
+<div class="font-black tracking-tighter text-[#001F58] uppercase"><img alt="INCORLASER S.A.C Logo" class="h-12 w-auto object-contain" src="img/logo.png"/></div>
 <div class="hidden md:flex items-center gap-8">
-<a class="text-slate-600 font-semibold text-sm tracking-tight hover:text-primary transition-colors duration-200" href="index.html">Inicio</a>
-<a class="text-slate-600 font-semibold text-sm tracking-tight hover:text-primary transition-colors duration-200" href="servicios.html">Servicios</a>
-<a class="text-slate-600 font-semibold text-sm tracking-tight hover:text-primary transition-colors duration-200" href="nosotros.html">Nosotros</a>
-<a class="text-slate-600 font-semibold text-sm tracking-tight hover:text-primary transition-colors duration-200" href="calidad.html">Calidad</a>
-<a class="text-primary border-b-2 border-[#FF6A00] pb-1 font-semibold text-sm tracking-tight" href="contacto.html">Contacto</a>
+<a class="text-slate-600 font-semibold text-sm tracking-tight hover:text-[#001F58]" href="index.html">Inicio</a>
+<a class="text-slate-600 font-semibold text-sm tracking-tight hover:text-[#001F58]" href="servicios.html">Servicios</a>
+<a class="text-slate-600 font-semibold text-sm tracking-tight hover:text-[#001F58]" href="nosotros.html">Nosotros</a>
+<a class="text-slate-600 font-semibold text-sm tracking-tight hover:text-[#001F58]" href="calidad.html">Calidad</a>
+<a class="text-[#000b2b] border-b-2 border-[#FF6A00] pb-1 font-semibold text-sm" href="contacto.html">Contacto</a>
 </div>
-<a href="contacto.html" class="bg-[#FF6A00] text-white px-6 py-2.5 font-semibold text-sm tracking-tight uppercase transition-all hover:bg-orange-700 active:opacity-80 shadow-lg shadow-orange-500/20">
+<a href="contacto.html" class="bg-[#FF6A00] text-white px-6 py-2.5 font-semibold text-sm tracking-tight uppercase hover:bg-orange-700 shadow-lg shadow-orange-500/20">
                 Cotizar Ahora
 </a>
 </div>
 </nav>
 <main>
-<section class="relative h-[400px] flex items-center bg-primary-container overflow-hidden">
-<div class="absolute inset-0 z-0">
+<section class="relative h-[400px] flex items-center bg-[#001f58] overflow-hidden">
+<div class="absolute inset-0">
 <img alt="Laser Cutting" class="w-full h-full object-cover opacity-30 mix-blend-overlay" src="img/hero-laser.png"/>
 </div>
-<div class="relative z-10 max-w-7xl mx-auto px-8 w-full text-center md:text-left">
-<span class="inline-block bg-on-tertiary-container text-white font-label-caps text-label-caps px-3 py-1 mb-6 uppercase">Expertos en Hardox</span>
-<h1 class="font-h1 text-h1 text-white max-w-2xl uppercase underline">Atención Técnica y Comercial</h1>
-<p class="font-body-lg text-body-lg text-on-primary-container mt-4 max-w-xl italic">Precisión milimétrica desde el primer contacto.</p>
+<div class="relative z-10 max-w-7xl mx-auto px-8 w-full text-white">
+<h1 class="text-5xl font-black uppercase">Atención Técnica y Comercial</h1>
+<p class="text-lg opacity-80 mt-4 max-w-xl">Precisión milimétrica desde el primer contacto. Solicite soporte especializado para sus proyectos industriales.</p>
 </div>
 </section>
-<section class="max-w-7xl mx-auto px-8 py-xl">
+<section class="max-w-7xl mx-auto px-8 py-20">
 <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
 <div class="lg:col-span-4 space-y-8">
-<div>
-<h2 class="font-h2 text-h2 text-primary mb-8 uppercase underline">Datos de Contacto</h2>
-<div class="space-y-8">
-<div class="flex gap-4">
-<div class="w-12 h-12 flex items-center justify-center bg-surface-container border border-outline-variant">
-<span class="material-symbols-outlined text-primary">location_on</span>
-</div>
-<div>
-<h3 class="font-label-caps text-label-caps text-secondary uppercase mb-1">Sede Central Perú</h3>
-<p class="font-body-md text-body-md">Urb. Santa Amelia Mza. B Lote 5,<br/>Comas, Lima – Perú.</p>
-</div>
-</div>
-<div class="flex gap-4">
-<div class="w-12 h-12 flex items-center justify-center bg-surface-container border border-outline-variant">
-<span class="material-symbols-outlined text-primary">call</span>
-</div>
-<div>
-<h3 class="font-label-caps text-label-caps text-secondary uppercase mb-1">Central Telefónica</h3>
-<p class="font-body-md text-body-md">+51 940 625 609 / +51 967 931 193</p>
-</div>
-</div>
-</div>
+<h2 class="text-3xl font-bold text-primary uppercase">Datos de Contacto</h2>
+<div class="space-y-4">
+<p class="font-bold">Sede Central Perú:</p>
+<p class="text-gray-600">Urb. Santa Amelia Mza. B Lote 5, Comas, Lima – Perú.</p>
+<p class="font-bold">Central Telefónica:</p>
+<p class="text-gray-600">+51 940 625 609 / +51 967 931 193</p>
 </div>
 </div>
 <div class="lg:col-span-8">
-<div class="bg-white border border-outline-variant p-10 shadow-2xl">
-<h2 class="font-h2 text-h2 text-primary mb-2 uppercase underline">Consulta Técnica</h2>
+<div class="bg-white border border-gray-200 p-10 shadow-xl">
+<h2 class="text-3xl font-bold text-primary mb-8 uppercase">Consulta Técnica</h2>
 <form class="grid grid-cols-1 md:grid-cols-2 gap-6">
-<div class="space-y-1.5">
-<label class="font-label-caps text-label-caps text-secondary uppercase block">Nombre Completo</label>
-<input class="w-full border-gray-300 focus:border-primary focus:ring-0 px-4 py-3 font-body-md" placeholder="Ej. Juan Pérez" type="text"/>
-</div>
-<div class="space-y-1.5">
-<label class="font-label-caps text-label-caps text-secondary uppercase block">Empresa</label>
-<input class="w-full border-gray-300 focus:border-primary focus:ring-0 px-4 py-3 font-body-md" placeholder="Nombre de su organización" type="text"/>
-</div>
-<div class="md:col-span-2 pt-4">
-<button class="bg-[#FF6A00] text-white w-full md:w-auto px-12 py-4 font-manrope font-bold uppercase tracking-widest text-sm transition-all hover:bg-opacity-90 shadow-xl" type="submit">
-                                    Enviar Requerimiento
-                                </button>
-</div>
+<input class="w-full border-gray-300 px-4 py-3" placeholder="Nombre Completo" type="text"/>
+<input class="w-full border-gray-300 px-4 py-3" placeholder="Empresa" type="text"/>
+<textarea class="w-full border-gray-300 px-4 py-3 md:col-span-2" placeholder="Detalles del Proyecto..." rows="4"></textarea>
+<button class="bg-[#FF6A00] text-white px-12 py-4 font-bold uppercase tracking-widest text-sm hover:bg-orange-700" type="submit">
+                                Enviar Requerimiento
+                            </button>
 </form>
 </div>
 </div>
 </div>
 </section>
-<section class="h-[600px] w-full relative grayscale hover:grayscale-0 transition-all duration-700">
-<iframe allowfullscreen="" class="absolute inset-0" height="100%" loading="lazy" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3902.938742878235!2d-77.065!3d-11.912!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTHCsDU0JzQzLjIiUyA3N8KwMDMnNTQuMCJX!5e0!3m2!1sen!2spe!4v1715600000000!5m2!1sen!2spe" style="border:0;" width="100%"></iframe>
-</section>
 </main>
-<footer class="bg-[#000b2b] text-white w-full py-16 border-t border-slate-900 italic font-bold">
-<div class="grid grid-cols-1 md:grid-cols-2 gap-8 px-8 max-w-7xl mx-auto uppercase">
-<div class="space-y-8">
-<div class="text-2xl font-extrabold text-white tracking-tighter underline">INCORLASER S.A.C</div>
-<p class="text-slate-500 text-[10px] uppercase tracking-widest opacity-40">
-        © 2024 INCORLASER S.A.C - Todos los derechos reservados.
-    </p>
-</div>
-<div class="flex flex-col md:items-end justify-between gap-8 opacity-60">
-<div class="flex flex-wrap md:flex-nowrap gap-x-8 gap-y-4">
-<a href="index.html">Inicio</a>
-<a href="servicios.html">Servicios</a>
-<a href="nosotros.html">Nosotros</a>
-<a href="calidad.html">Calidad</a>
-</div>
-</div>
-</div>
+<footer class="bg-primary text-white py-12 text-center text-xs uppercase tracking-widest">
+    © 2024 INCORLASER S.A.C | RUC 20614188295
 </footer>
 </body></html>

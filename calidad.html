@@ -13,87 +13,14 @@
             theme: {
                 extend: {
                     "colors": {
-                        "surface-container-low": "#f1f4f5",
-                        "surface-container-highest": "#e0e3e4",
-                        "on-tertiary-container": "#e86000",
-                        "background": "#f7fafb",
-                        "on-secondary-container": "#5b6669",
-                        "surface-container-high": "#e5e9ea",
-                        "error-container": "#ffdad6",
                         "primary": "#000b2b",
-                        "on-secondary": "#ffffff",
-                        "on-primary-fixed-variant": "#2d447e",
-                        "surface-bright": "#f7fafb",
-                        "on-primary": "#ffffff",
-                        "inverse-primary": "#b2c5ff",
-                        "secondary-fixed": "#d8e5e8",
-                        "secondary": "#556063",
-                        "inverse-on-surface": "#eef1f2",
-                        "secondary-fixed-dim": "#bcc9cc",
-                        "on-tertiary": "#ffffff",
-                        "on-error-container": "#93000a",
-                        "on-surface-variant": "#444650",
-                        "on-error": "#ffffff",
-                        "on-primary-container": "#7389c7",
-                        "primary-container": "#001f58",
-                        "inverse-surface": "#2d3132",
-                        "on-secondary-fixed": "#121d20",
-                        "on-tertiary-fixed-variant": "#7b2f00",
-                        "surface-dim": "#d7dadb",
-                        "primary-fixed-dim": "#b2c5ff",
-                        "primary-fixed": "#dae2ff",
-                        "on-background": "#181c1d",
-                        "surface-variant": "#e0e3e4",
-                        "surface-container": "#ebeeef",
-                        "surface-tint": "#465c97",
-                        "on-secondary-fixed-variant": "#3d494b",
-                        "secondary-container": "#d8e5e8",
-                        "surface": "#f7fafb",
-                        "error": "#ba1a1a",
-                        "tertiary": "#1e0600",
-                        "tertiary-fixed": "#ffdbcc",
-                        "outline": "#757781",
-                        "on-primary-fixed": "#001848",
-                        "on-tertiary-fixed": "#351000",
-                        "outline-variant": "#c5c6d1",
-                        "tertiary-container": "#411600",
-                        "surface-container-lowest": "#ffffff",
-                        "on-surface": "#181c1d",
-                        "tertiary-fixed-dim": "#ffb694"
-                    },
-                    "borderRadius": {
-                        "DEFAULT": "0.125rem",
-                        "lg": "0.25rem",
-                        "xl": "0.5rem",
-                        "full": "0.75rem"
-                    },
-                    "spacing": {
-                        "md": "24px",
-                        "lg": "48px",
-                        "gutter": "24px",
-                        "base": "8px",
-                        "xl": "80px",
-                        "sm": "12px",
-                        "xs": "4px",
-                        "container-max": "1280px"
+                        "on-tertiary-container": "#e86000",
+                        "background": "#f7fafb"
                     },
                     "fontFamily": {
                         "h2": ["Manrope"],
                         "h1": ["Manrope"],
-                        "body-md": ["Manrope"],
-                        "body-lg": ["Manrope"],
-                        "technical-data": ["Manrope"],
-                        "label-caps": ["Manrope"],
-                        "h3": ["Manrope"]
-                    },
-                    "fontSize": {
-                        "h2": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "700"}],
-                        "h1": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800"}],
-                        "body-md": ["16px", {"lineHeight": "1.5", "letterSpacing": "0", "fontWeight": "400"}],
-                        "body-lg": ["18px", {"lineHeight": "1.6", "letterSpacing": "0", "fontWeight": "400"}],
-                        "technical-data": ["14px", {"lineHeight": "1.4", "fontWeight": "500"}],
-                        "label-caps": ["12px", {"lineHeight": "1.2", "letterSpacing": "0.08em", "fontWeight": "700"}],
-                        "h3": ["24px", {"lineHeight": "1.3", "letterSpacing": "0", "fontWeight": "600"}]
+                        "body-md": ["Manrope"]
                     }
                 },
             },
@@ -102,217 +29,55 @@
 <style>
         .material-symbols-outlined {
             font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-            display: inline-block;
-            vertical-align: middle;
-        }
-        body {
-            background-color: #f7fafb;
         }
     </style>
 </head>
-<body class="font-body-md text-on-surface">
-<!-- TopAppBar -->
-<header class="bg-white fixed top-0 w-full z-50 border-b border-gray-300/30">
-<div class="flex justify-between items-center h-20 px-8 max-w-screen-2xl mx-auto w-full font-manrope antialiased tracking-tight">
+<body class="font-body-md text-on-surface bg-background">
+<header class="bg-white border-b border-gray-300/30 sticky top-0 z-50">
+<div class="flex justify-between items-center h-20 px-8 max-w-screen-2xl mx-auto w-full">
 <div class="text-xl font-extrabold text-[#001F58] uppercase tracking-widest"><img alt="INCORLASER S.A.C" class="h-12 w-auto object-contain" src="img/logo.png"/></div>
 <nav class="hidden md:flex items-center space-x-8">
-<a class="text-gray-600 hover:text-[#001F58] transition-colors cursor-pointer active:opacity-80" href="index.html">Inicio</a>
-<a class="text-gray-600 hover:text-[#001F58] transition-colors cursor-pointer active:opacity-80" href="servicios.html">Servicios</a>
-<a class="text-gray-600 hover:text-[#001F58] transition-colors cursor-pointer active:opacity-80" href="nosotros.html">Nosotros</a>
-<a class="text-[#001F58] font-bold border-b-2 border-[#001F58] pb-1 cursor-pointer active:opacity-80" href="calidad.html">Calidad</a>
-<a class="text-gray-600 hover:text-[#001F58] transition-colors cursor-pointer active:opacity-80" href="contacto.html">Contacto</a>
+<a class="text-gray-600 hover:text-[#001F58] transition-colors" href="index.html">Inicio</a>
+<a class="text-gray-600 hover:text-[#001F58] transition-colors" href="servicios.html">Servicios</a>
+<a class="text-gray-600 hover:text-[#001F58] transition-colors" href="nosotros.html">Nosotros</a>
+<a class="text-[#001F58] font-bold border-b-2 border-[#001F58] pb-1" href="calidad.html">Calidad</a>
+<a class="text-gray-600 hover:text-[#001F58] transition-colors" href="contacto.html">Contacto</a>
+<a href="contacto.html" class="bg-[#001F58] text-white px-6 py-2 text-xs font-bold tracking-widest uppercase">Cotizar Ahora</a>
 </nav>
-<div class="flex items-center gap-4">
-<a href="contacto.html" class="bg-[#001F58] text-white px-6 py-2 text-label-caps uppercase font-bold tracking-widest hover:bg-primary-container transition-all cursor-pointer active:opacity-80">
-                    Cotizar Ahora
-                </a>
-</div>
 </div>
 </header>
-<main class="pt-20">
+<main>
 <!-- Hero Section -->
-<section class="relative h-[600px] flex items-center overflow-hidden bg-primary">
-<div class="absolute inset-0 z-0">
-<img alt="Fondo Industrial" class="w-full h-full object-cover opacity-40" data-alt="ultra-modern 30kW fiber laser cutting machine in operation, sparks and blue light, high precision industrial setting" src="img/hero-laser.png"/>
-<div class="absolute inset-0 bg-gradient-to-r from-primary via-primary/80 to-transparent"></div>
+<section class="relative h-[450px] flex items-center overflow-hidden bg-primary">
+<div class="absolute inset-0">
+<img alt="Fondo Industrial" class="w-full h-full object-cover opacity-40" src="img/detalles-laser.png"/>
 </div>
-<div class="container-max mx-auto px-8 relative z-10">
-<div class="max-w-2xl">
-<span class="inline-block py-1 px-3 bg-on-tertiary-container text-white text-label-caps mb-4">INGENIERÍA DE PRECISIÓN</span>
-<h1 class="font-h1 text-h1 text-white mb-6">Compromiso con la Precisión Métrica</h1>
-<p class="font-body-lg text-body-lg text-on-primary-container mb-8">
-                        Nuestra tecnología de corte láser de 30kW garantiza resultados perfectos en cada pieza. En INCORLASER, la calidad no es una opción, es el estándar que define nuestra capacidad industrial.
-                    </p>
-</div>
+<div class="container mx-auto px-8 relative z-10 text-white">
+<h1 class="text-5xl font-black mb-6 uppercase">Compromiso con la Precisión Métrica</h1>
+<p class="text-lg opacity-80 max-w-2xl">
+        Nuestra tecnología de corte láser de 30kW garantiza resultados perfectos en cada pieza. La calidad es el estándar que define nuestra capacidad industrial.
+    </p>
 </div>
 </section>
-<!-- Protocolo de Calidad (Section 1) -->
-<section class="py-xl bg-white">
-<div class="container-max mx-auto px-8">
-<div class="text-center mb-16">
-<h2 class="font-h2 text-h2 text-primary mb-4">Protocolo de Calidad Interno</h2>
-<div class="w-24 h-1 bg-on-tertiary-container mx-auto"></div>
+<!-- Protocolo -->
+<section class="py-20 bg-white">
+<div class="container mx-auto px-8 grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="p-8 border border-gray-100 bg-slate-50">
+<h3 class="text-2xl font-bold mb-4 text-primary">0.06mm</h3>
+<p class="text-gray-600">Precisión mecánica garantizada mediante cabezales Precitec de última generación.</p>
 </div>
-<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
-<!-- Step 1 -->
-<div class="border border-outline-variant p-lg bg-surface-container-lowest">
-<div class="text-on-tertiary-container mb-4">
-<span class="material-symbols-outlined text-4xl" data-icon="inventory_2">inventory_2</span>
+<div class="p-8 border border-gray-100 bg-slate-50">
+<h3 class="text-2xl font-bold mb-4 text-primary">Control 100%</h3>
+<p class="text-gray-600">Cada pieza pasa por una inspección dimensional rigurosa antes del despacho.</p>
 </div>
-<h3 class="font-h3 text-h3 text-primary mb-4">01. Materia Prima</h3>
-<p class="font-body-md text-body-md text-secondary">
-                            Inspección exhaustiva de cada plancha antes del proceso. Verificamos planitud, limpieza superficial y trazabilidad del material para asegurar un corte sin impurezas.
-                        </p>
-</div>
-<!-- Step 2 -->
-<div class="border border-outline-variant p-lg bg-surface-container-lowest">
-<div class="text-on-tertiary-container mb-4">
-<span class="material-symbols-outlined text-4xl" data-icon="straighten">straighten</span>
-</div>
-<h3 class="font-h3 text-h3 text-primary mb-4">02. Control Dimensional</h3>
-<p class="font-body-md text-body-md text-secondary">
-                            Validación en tiempo real mediante instrumentos de medición digital calibrados. Cotejamos cada coordenada del plano contra la pieza física terminada.
-                        </p>
-</div>
-<!-- Step 3 -->
-<div class="border border-outline-variant p-lg bg-surface-container-lowest">
-<div class="text-on-tertiary-container mb-4">
-<span class="material-symbols-outlined text-4xl" data-icon="fact_check">fact_check</span>
-</div>
-<h3 class="font-h3 text-h3 text-primary mb-4">03. Acabado y Embalaje</h3>
-<p class="font-body-md text-body-md text-secondary">
-                            Remoción de rebabas y limpieza final. Embalaje técnico diseñado para proteger la integridad dimensional durante el transporte al cliente final.
-                        </p>
-</div>
-</div>
-</div>
-</section>
-<!-- Tecnología de Medición (Section 2) -->
-<section class="py-xl bg-surface-container-low">
-<div class="container-max mx-auto px-8">
-<div class="grid grid-cols-1 lg:grid-cols-2 gap-xl items-center">
-<div class="relative">
-<img alt="Medición de Precisión" class="w-full aspect-square object-cover border border-outline-variant" data-alt="professional technician using a high-precision digital caliper to measure a laser-cut steel component, macro shot, shallow depth of field, blue industrial lighting" src="img/detalles-laser.png"/>
-<div class="absolute -bottom-6 -right-6 bg-primary text-white p-8 border-4 border-on-tertiary-container hidden md:block">
-<div class="text-h1 font-h1">0.06<span class="text-lg font-normal">mm</span></div>
-<div class="text-label-caps">PRECISIÓN MECÁNICA</div>
-</div>
-</div>
-<div class="pr-8">
-<h2 class="font-h2 text-h2 text-primary mb-6">Tecnología de Medición Superior</h2>
-<p class="font-body-lg text-body-lg text-secondary mb-8">
-                            Nuestra infraestructura integra cabezales **PRECITEC** de última generación, permitiendo un monitoreo constante del punto focal para evitar desviaciones térmicas.
-                        </p>
-<div class="space-y-6">
-<div class="flex items-center gap-4 p-md bg-white border border-outline-variant">
-<span class="material-symbols-outlined text-on-tertiary-container" data-icon="biotech">biotech</span>
-<div>
-<div class="text-technical-data font-bold text-primary">REPETITIVIDAD EXTREMA</div>
-<div class="text-body-md text-secondary">Tolerancia de 0.03 mm garantizada en series de producción masiva.</div>
-</div>
-</div>
-<div class="flex items-center gap-4 p-md bg-white border border-outline-variant">
-<span class="material-symbols-outlined text-on-tertiary-container" data-icon="settings_suggest">settings_suggest</span>
-<div>
-<div class="text-technical-data font-bold text-primary">SISTEMAS PRECITEC</div>
-<div class="text-body-md text-secondary">Sensores de distancia capacitivos que mantienen la altura constante sobre el material.</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
-<!-- Expertos en Hardox (Section 3) -->
-<section class="py-xl bg-white overflow-hidden">
-<div class="container-max mx-auto px-8">
-<div class="bg-primary-container p-xl flex flex-col md:flex-row items-center gap-lg border-l-[12px] border-on-tertiary-container">
-<div class="flex-1">
-<div class="inline-block py-1 px-4 bg-on-tertiary-container text-white font-bold text-label-caps mb-6">EXPERTOS EN HARDOX</div>
-<h2 class="font-h2 text-h2 text-white mb-6">Especialización en Materiales de Alta Resistencia</h2>
-<p class="font-body-lg text-body-lg text-on-primary-container">
-                            El procesamiento de Hardox requiere un control térmico quirúrgico para no alterar su dureza estructural. En INCORLASER, dominamos el corte de aceros antidesgaste, asegurando que las propiedades mecánicas permanezcan intactas desde el primer hasta el último milímetro de corte.
-                        </p>
-</div>
-<div class="flex-shrink-0">
-<img alt="Material Hardox" class="w-80 h-80 object-cover" data-alt="precise stacks of heavy duty industrial steel plates, high quality finish, metallic reflection, clean workshop environment" src="img/hero-laser.png"/>
-</div>
-</div>
-</div>
-</section>
-<!-- Technical Data Table -->
-<section class="py-xl bg-surface-container-low">
-<div class="container-max mx-auto px-8">
-<div class="mb-12">
-<h3 class="font-h3 text-h3 text-primary mb-2 uppercase tracking-tight">Capacidades Técnicas de Inspección</h3>
-<p class="text-secondary">Valores nominales de operación estándar</p>
-</div>
-<div class="overflow-x-auto">
-<table class="w-full border-collapse">
-<thead>
-<tr class="bg-primary text-white">
-<th class="p-md text-left text-label-caps">Parámetro</th>
-<th class="p-md text-left text-label-caps">Rango de Medición</th>
-<th class="p-md text-left text-label-caps">Tolerancia Máxima</th>
-<th class="p-md text-left text-label-caps">Método</th>
-</tr>
-</thead>
-<tbody class="text-technical-data text-on-surface">
-<tr class="border-b border-outline-variant bg-white">
-<td class="p-md font-bold">Corte Lineal</td>
-<td class="p-md">Hasta 6000 mm</td>
-<td class="p-md">± 0.1 mm</td>
-<td class="p-md">Láser Tracker</td>
-</tr>
-<tr class="border-b border-outline-variant bg-surface-container-low">
-<td class="p-md font-bold">Perforación</td>
-<td class="p-md">Ø 2 mm - Ø 500 mm</td>
-<td class="p-md">± 0.05 mm</td>
-<td class="p-md">Vernier Digital</td>
-</tr>
-<tr class="border-b border-outline-variant bg-white">
-<td class="p-md font-bold">Repetitividad</td>
-<td class="p-md">N/A</td>
-<td class="p-md">± 0.03 mm</td>
-<td class="p-md">Control CNC</td>
-</tr>
-<tr class="border-b border-outline-variant bg-surface-container-low">
-<td class="p-md font-bold">Planicidad</td>
-<td class="p-md">Área completa</td>
-<td class="p-md">± 0.2 mm/m</td>
-<td class="p-md">Nivel Óptico</td>
-</tr>
-</tbody>
-</table>
+<div class="p-8 border border-gray-100 bg-slate-50">
+<h3 class="text-2xl font-bold mb-4 text-primary">Trazabilidad</h3>
+<p class="text-gray-600">Documentación completa de materiales y procesos para cada proyecto minero.</p>
 </div>
 </div>
 </section>
 </main>
-<!-- Footer -->
-<footer class="bg-slate-950 text-white w-full py-16 border-t border-gray-800">
-<div class="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-7xl mx-auto px-8 w-full">
-<div>
-<span class="text-xl font-black text-white mb-4 block tracking-tighter">INCORLASER S.A.C</span>
-<p class="font-manrope text-sm uppercase tracking-wider text-gray-400 mb-6">
-                    Líderes en corte láser de alta potencia y procesamiento de aceros especiales en el Perú.
-                </p>
-<div class="flex flex-col space-y-2 font-manrope text-sm uppercase tracking-wider text-gray-400">
-<p>RUC: 20614188295</p>
-<p>Urb. Santa Amelia Mza. B Lote 5, Comas, Lima – Perú</p>
-</div>
-</div>
-<div class="flex flex-col md:items-end justify-between gap-8">
-<div class="flex flex-wrap md:flex-nowrap gap-x-8 gap-y-4 text-xs font-bold uppercase tracking-widest opacity-60">
-<a class="hover:text-white transition-colors" href="index.html">Inicio</a>
-<a class="hover:text-white transition-colors" href="servicios.html">Servicios</a>
-<a class="hover:text-white transition-colors" href="nosotros.html">Nosotros</a>
-<a class="hover:text-white transition-colors" href="calidad.html">Calidad</a>
-<a class="hover:text-white transition-colors" href="contacto.html">Contacto</a>
-</div>
-<div class="text-gray-500 font-manrope text-xs uppercase tracking-[0.2em]">
-                    © 2024 INCORLASER S.A.C | Todos los derechos reservados.
-                </div>
-</div>
-</div>
+<footer class="bg-primary text-white py-12 text-center text-xs uppercase tracking-widest">
+    © 2024 INCORLASER S.A.C | RUC 20614188295
 </footer>
 </body></html>
