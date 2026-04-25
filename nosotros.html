@@ -67,6 +67,16 @@
                     "xl": "0.5rem",
                     "full": "0.75rem"
             },
+            "spacing": {
+                    "xl": "80px",
+                    "lg": "48px",
+                    "gutter": "24px",
+                    "container-max": "1280px",
+                    "sm": "12px",
+                    "md": "24px",
+                    "base": "8px",
+                    "xs": "4px"
+            },
             "fontFamily": {
                     "body-md": ["Manrope"],
                     "h1": ["Manrope"],
@@ -93,68 +103,249 @@
         .material-symbols-outlined {
             font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
         }
+        .hardox-badge-gradient {
+            background: linear-gradient(135deg, #181c1d 0%, #000b2b 100%);
+        }
     </style>
 </head>
 <body class="bg-background text-on-surface font-body-md">
 <!-- Top Navigation Bar -->
 <header class="bg-white border-b border-slate-200 sticky top-0 z-50">
-<div class="flex justify-between items-center h-20 px-8 max-w-7xl mx-auto w-full">
-<div class="text-2xl font-black tracking-tighter text-[#001F58] font-headline uppercase"><img alt="INCORLASER S.A.C Logo" class="h-12 w-auto object-contain" src="img/logo.png"/></div>
-<nav class="hidden md:flex space-x-8 items-center">
-<a class="font-headline font-medium tracking-tight text-slate-500 hover:text-[#001F58] transition-all duration-200 text-sm" href="index.html">Inicio</a>
-<a class="font-headline font-medium tracking-tight text-slate-500 hover:text-[#001F58] transition-all duration-200 text-sm" href="servicios.html">Servicios</a>
-<a class="font-headline font-bold tracking-tight text-[#001F58] border-b-2 border-[#FF6A00] pb-1 text-sm" href="nosotros.html">Nosotros</a>
-<a class="font-headline font-medium tracking-tight text-slate-500 hover:text-[#001F58] transition-all duration-200 text-sm" href="calidad.html">Calidad</a>
-<a class="font-headline font-medium tracking-tight text-slate-500 hover:text-[#001F58] transition-all duration-200 text-sm" href="contacto.html">Contacto</a>
-<a href="contacto.html" class="bg-[#FF6A00] text-white px-6 py-2.5 font-bold text-sm uppercase hover:bg-orange-700 transition-all shadow-lg shadow-orange-500/20">Solicitar Cotización</a>
-</nav>
+<div class="flex justify-between items-center px-8 max-w-7xl mx-auto w-full h-28">
+<div class="text-2xl font-black tracking-tighter text-[#001F58] font-['Manrope'] uppercase"><img alt="INCORLASER S.A.C Logo" class="w-auto object-contain h-20" src="https://lh3.googleusercontent.com/aida/ADBb0ugBYHXQ8_rMmPNaI9hVmztgx_DjqKbCxVDJJ_T6JNouoXUr0UXA6aEs0X8brPn6F6Wsg64OrnnQRNmzClmvFSfcZSuVWjpO40kspvf0BkLkduXRx3wCto-ofY5KGFDZ8dtGXFSmYSBoKBYDb3AYEMRipBrwdsRuD2ABjT2KxygNipVCgONwP0jqClzGCoDegaljhTssxeoXoSua-UW3jn8x4akUMeGBKfHhP4jC_Ud0aZS8egFzybJupw-Zz7o7YzbOnXJQXO7w3Hw" style=""/></div>
+<nav class="hidden md:flex space-x-8 items-center"><a class="font-['Manrope'] font-semibold tracking-tight text-slate-600 hover:text-[#001F58] transition-all duration-200 text-sm" href="index.html">Inicio</a>
+<a class="font-['Manrope'] font-semibold tracking-tight text-slate-600 hover:text-[#001F58] transition-all duration-200 text-sm" href="servicios.html">Servicios</a>
+<a class="font-['Manrope'] font-bold tracking-tight text-[#001F58] border-b-2 border-[#FF6A00] pb-1 text-sm" href="nosotros.html">Nosotros</a>
+<a class="font-['Manrope'] font-semibold tracking-tight text-slate-600 hover:text-[#001F58] transition-all duration-200 text-sm" href="calidad.html">Calidad</a>
+<a class="font-['Manrope'] font-semibold tracking-tight text-slate-600 hover:text-[#001F58] transition-all duration-200 text-sm" href="contacto.html">Contacto</a>
+<a href="contacto.html" class="bg-[#FF6A00] text-white px-6 py-2 rounded-none font-bold text-xs uppercase hover:bg-orange-600 transition-all active:scale-95">Solicitar Cotización</a></nav>
 </div>
 </header>
 <main>
 <!-- Hero Section -->
 <section class="relative h-[600px] flex items-center overflow-hidden bg-primary">
 <div class="absolute inset-0 z-0">
-<img alt="Planta Industrial" class="w-full h-full object-cover opacity-40 grayscale" src="img/hero-laser.png"/>
+<img alt="Planta Industrial de alta tecnología" class="w-full h-full object-cover opacity-40 grayscale" data-alt="Wide shot of a massive modern industrial factory floor with heavy machinery and professional blue lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC4qXcIpGQ8Bg2YlMN1f2G9sj4v0jLEroY4kolQZXwOoOAVJ-832M_Y3lfkH9I_LQXIQh837AHnN5zOPKH-fMHDKNYkcAI1YkmE_-UFNXmj6sMPaxOPygexFZAuQD1hCgUDIu-KGaGSu4YdCpQ2UtqtUCv0ztWVSQlsgspJvWa2UOiUgsbNo120llKB87NA19tHc8v_7P3mSZxXfFkTws5bnYOx6fexmRhTEZVtC-bhwY45_RvesZuTtn_Kh50n17mfRPy4YA9HbPwa" style=""/>
 <div class="absolute inset-0 bg-gradient-to-r from-primary via-primary/80 to-transparent"></div>
 </div>
 <div class="container mx-auto px-8 relative z-10 max-w-7xl">
 <div class="max-w-3xl">
-<span class="font-label-caps text-label-caps text-on-tertiary-container mb-4 block">LÍDERES EN CORTE INDUSTRIAL</span>
-<h1 class="font-h1 text-h1 text-white mb-6 uppercase">Ingeniería que desafía los límites del acero</h1>
-<p class="font-body-lg text-body-lg text-white/80 max-w-xl">
-                    Capacidad disruptiva de 30kW para procesamiento de metales de gran espesor con precisión nanométrica.
-                </p>
+<span class="font-label-caps text-label-caps text-on-tertiary-container mb-4 block" style="">LÍDERES EN CORTE INDUSTRIAL</span>
+<h1 class="font-h1 text-h1 text-white mb-6 uppercase" style="">Ingeniería que desafía los límites del acero</h1>
+<p class="font-body-lg text-body-lg text-white/80 max-w-xl" style=""><p class="MsoNormal" style="">Contamos con una potencia de <b data-index-in-node="30" data-path-to-node="3,0">30kW</b> que nos permite cortar metales de gran espesor
+con una <b data-index-in-node="90" data-path-to-node="3,0">precisión absoluta</b>.
+Obtenemos acabados perfectos sin importar la robustez del material<span style="color:red"><o:p></o:p></span></p></p>
 </div>
 </div>
 </section>
 <!-- Quiénes Somos Section -->
-<section class="py-20 bg-white">
+<section class="py-xl bg-white">
 <div class="container mx-auto px-8 max-w-7xl">
-<div class="grid grid-cols-1 md:grid-cols-12 gap-8">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
 <div class="md:col-span-5">
-<span class="font-label-caps text-label-caps text-primary mb-4 block">PERFIL CORPORATIVO</span>
-<h2 class="font-h2 text-h2 text-primary mb-8 uppercase">Quiénes Somos</h2>
-<p class="font-body-md text-on-surface-variant">En Incorlaser S.A.C. somos una empresa especializada en servicios de corte láser de alta potencia para la industria minera y metalmecánica. Contamos con tecnología de última generación, incluyendo una mesa de corte de 30 kW con capacidad de 3 m x 10 m, cabezal biselador y sistema CNC de alta precisión.</p>
+<span class="font-label-caps text-label-caps text-primary mb-4 block" style="">PERFIL CORPORATIVO</span>
+<h2 class="font-h2 text-h2 text-primary mb-8 uppercase" style="">Quiénes Somos</h2>
+<div class="space-y-4 font-body-md text-on-surface-variant">
+<p class="" style="">En Incorlaser S.A.C. somos una empresa especializada en servicios de corte láser de alta potencia para la industria minera y metalmecánica. Contamos con tecnología de última generación, incluyendo una mesa de corte de 30 kW con capacidad de 3 m x 10 m, cabezal biselador y sistema CNC de alta precisión, lo que nos permite trabajar con eficiencia, rapidez y exactitud en materiales como acero al carbono, acero inoxidable, aluminio, cobre y aceros de alta resistencia como Hardox 400, 500 y 600. Nuestra operación está orientada a optimizar el uso de materiales, reducir costos y garantizar alta productividad en proyectos de alta exigencia. Además, contamos con experiencia en la fabricación de liners de molino para la industria minera.</p>
+</div>
 </div>
 <div class="md:col-span-7 grid grid-cols-2 gap-4">
-<div class="border border-outline-variant p-6 bg-surface-container-low text-center">
-<h3 class="font-h3 text-h3 text-primary mb-2">30kW</h3>
-<p class="font-technical-data text-technical-data">Potencia de fibra óptica</p>
+<div class="border border-outline-variant p-md bg-surface-container-low">
+<span class="material-symbols-outlined text-on-tertiary-container mb-4" style='font-variation-settings: "opsz" 48;'>precision_manufacturing</span>
+<h3 class="font-h3 text-h3 text-primary mb-2" style="">30kW</h3>
+<p class="font-technical-data text-technical-data" style="">Potencia de fibra óptica de última generación para cortes profundos.</p>
 </div>
-<div class="border border-outline-variant p-6 bg-surface-container-low text-center">
-<h3 class="font-h3 text-h3 text-primary mb-2">10 x 3m</h3>
-<p class="font-technical-data text-technical-data">Área de corte expandida</p>
+<div class="border border-outline-variant p-md bg-surface-container-low">
+<span class="material-symbols-outlined text-on-tertiary-container mb-4" style='font-variation-settings: "opsz" 48;'>straighten</span>
+<h3 class="font-h3 text-h3 text-primary mb-2" style="">10 x 3m</h3>
+<p class="font-technical-data text-technical-data" style="">Área de corte expandida para componentes mineros de gran formato.</p>
 </div>
+<div class="col-span-2 relative h-64 border border-outline-variant overflow-hidden">
+<img alt="Tecnología de corte por fibra" class="w-full h-full object-cover" data-alt="High-speed fiber laser cutting head in a darkened industrial environment with intense white-hot sparks and precision blue light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuClh7HLk51FHca54jDx72416RqJjsp7nBFusH-vKqUFKiGrw23y6TtRAGHX7Zn63jf-J1wbFtJ9_ESfKVO0SYlUIrEKtrtCDC-3BmyadfE8i4RPDSJV5y5ippwsp3Pr5rZEq91R8iqvTcpfiU5liDEcECRbunD47sHDbQ-9ZuuQX2SeiWIOzRjP0xvUDNcJat40poXePAmiswJbuXkOc_KXuAN5Zeb2IjyFDrM_jSXjk0J0QLUdIx7fDvYcHudIfNnz8LADTFVa5SWk" style=""/>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Infraestructura y Tecnología (Penta Laser) -->
+<section class="py-xl bg-surface-container-lowest border-y border-outline-variant">
+<div class="container mx-auto px-8 max-w-7xl">
+<div class="flex flex-col md:flex-row items-center gap-lg">
+<div class="w-full md:w-1/2">
+<img alt="Planta industrial moderna de alta capacidad" class="w-full h-[400px] object-cover border border-outline-variant shadow-sm" data-alt="Wide shot of a clean, brightly lit industrial workshop featuring large CNC machinery and metallic components" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDFv5Ow-uRdZtufP2C3jag7M6cahJlqFNiSoamRWGX2GrSNty0dmVhY8dXW8K0O802IxPgn08WlB4mmAK3XSKXuKHhXW8GVBbnCu8ZCHsz1l5DccBTsyKVRUAcOcyHkIn4BjX0-ATGhNoXMYyUdOMjyQEViA2CHPkyPE-HHValiuGajEQrjagreDvQGU9IqqVdUCLuQjwqc-nHNf15U-tNIrezmgnVR57mLOxuxPaGdYMeBIQQgKzpI2yXhw-Coyg8yaOy0LXWB3SE-" style=""/>
+</div>
+<div class="w-full md:w-1/2">
+<span class="font-label-caps text-label-caps text-on-tertiary-container mb-4 block" style="">TECNOLOGÍA DE PUNTA</span>
+<h2 class="font-h2 text-h2 text-primary mb-6 uppercase" style="">TECNOLOGIA EuropeA: Penta Laser</h2>
+<p class="font-body-md text-on-surface-variant mb-8" style="">
+                        Nuestras operaciones se fundamentan en la tecnología de Penta Laser, combinando el diseño y precisión europea con una potencia de fuente de fibra de 30kW. Esta sinergia garantiza acabados de calidad superior incluso en materiales de alta dureza.
+                    </p>
+<div class="grid grid-cols-1 gap-base">
+<div class="flex items-center gap-4 p-4 border-l-4 border-primary bg-surface-container">
+<span class="material-symbols-outlined text-primary" style="">change_history</span>
+<div>
+<h4 class="font-technical-data font-bold uppercase" style="">Capacidad de Biselado 3D</h4>
+<p class="text-xs text-on-surface-variant" style="">Rango dinámico de +45° a -45° para preparaciones de soldadura perfectas.</p>
+</div>
+</div>
+<div class="flex items-center gap-4 p-4 border-l-4 border-primary bg-surface-container">
+<span class="material-symbols-outlined text-primary" style="">bolt</span>
+<div>
+<h4 class="font-technical-data font-bold uppercase" style="">Eficiencia Energética</h4>
+<p class="text-xs text-on-surface-variant" style="">Fuentes de fibra estables con mínima zona afectada por el calor (HAZ).</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Flujo de Trabajo Section -->
+<section class="py-xl bg-white">
+<div class="container mx-auto px-8 max-w-7xl">
+<div class="text-center mb-16">
+<span class="font-label-caps text-label-caps text-on-tertiary-container mb-4 block" style="">PROCESO OPERATIVO</span>
+<h2 class="font-h2 text-h2 text-primary uppercase" style="">Trazabilidad y Precisión en Cada Etapa</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter relative">
+<!-- Workflow Steps -->
+<div class="flex flex-col items-center text-center group">
+<div class="w-16 h-16 border-2 border-primary flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-white transition-all">
+<span class="material-symbols-outlined" style="">terminal</span>
+</div>
+<h4 class="font-h3 text-[18px] text-primary mb-2 uppercase" style="">Diseño CAD/CAM</h4>
+<p class="font-technical-data text-on-surface-variant" style="">Optimización de nesting para el máximo aprovechamiento del material.</p>
+</div>
+<div class="flex flex-col items-center text-center group">
+<div class="w-16 h-16 border-2 border-primary flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-white transition-all">
+<span class="material-symbols-outlined" style="">settings_suggest</span>
+</div>
+<h4 class="font-h3 text-[18px] text-primary mb-2 uppercase" style="">Corte CNC 30kW</h4>
+<p class="font-technical-data text-on-surface-variant" style="">Ejecución de corte de alta velocidad con cabezal inteligente.</p>
+</div>
+<div class="flex flex-col items-center text-center group">
+<div class="w-16 h-16 border-2 border-primary flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-white transition-all">
+<span class="material-symbols-outlined" style="">verified</span>
+</div>
+<h4 class="font-h3 text-[18px] text-primary mb-2 uppercase" style="">Control de Calidad</h4>
+<p class="font-technical-data text-on-surface-variant" style="">Verificación dimensional rigurosa de cada pieza procesada.</p>
+</div>
+<div class="flex flex-col items-center text-center group">
+<div class="w-16 h-16 border-2 border-primary flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-white transition-all">
+<span class="material-symbols-outlined" style="">local_shipping</span>
+</div>
+<h4 class="font-h3 text-[18px] text-primary mb-2 uppercase" style="">Despacho Logístico</h4>
+<p class="font-technical-data text-on-surface-variant" style="">Embalaje industrial y envío directo a proyectos a nivel nacional.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Expertos en Hardox Section -->
+<section class="py-xl hardox-badge-gradient text-white overflow-hidden">
+<div class="container mx-auto px-8 max-w-7xl">
+<div class="grid grid-cols-1 md:grid-cols-2 items-center gap-lg">
+<div>
+<div class="inline-block border-2 border-on-tertiary-container px-6 py-2 mb-8">
+<span class="font-label-caps text-label-caps text-on-tertiary-container uppercase" style="">Materiales de Alta Resistencia</span>
+</div>
+<h2 class="font-h1 text-h1 mb-6 uppercase" style="">Procesamiento de Hardox</h2>
+<p class="font-body-lg text-white/70 mb-8" style="">
+                        Dominamos el procesamiento térmico de aceros antidesgaste para la minería. Nuestra tecnología de 30kW permite cortar Hardox 400, 500 y 600 de gran espesor manteniendo las propiedades mecánicas del material intactas gracias al control preciso de la energía.
+                    </p>
+<ul class="space-y-4">
+<li class="flex items-center gap-3" style="">
+<span class="material-symbols-outlined text-on-tertiary-container" style="">check_circle</span>
+<span class="font-technical-data uppercase tracking-wider" style="">Corte de Hardox 400, 500 y 600</span>
+</li>
+<li class="flex items-center gap-3" style="">
+<span class="material-symbols-outlined text-on-tertiary-container" style="">check_circle</span>
+<span class="font-technical-data uppercase tracking-wider" style="">Biselado estructural para tolvas mineras</span>
+</li>
+<li class="flex items-center gap-3" style="">
+<span class="material-symbols-outlined text-on-tertiary-container" style="">check_circle</span>
+<span class="font-technical-data uppercase tracking-wider" style="">Fabricación de liners de molino</span>
+</li>
+</ul>
+</div>
+<div class="relative">
+<div class="aspect-square border border-white/10 p-base bg-slate-900/50">
+<img alt="Planchas de acero de alta resistencia" class="w-full h-full object-cover" data-alt="Stacked thick heavy-duty industrial steel plates with a cold metallic texture, ready for high-precision laser cutting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDl0sE4mXs2gPSxDYiSaogSL-_5Zoug_BZavcxX991qlv2sYjLjl6JlzUmESDJoeJndwx9XvzaiEbckI1_ln8gUh-j8MNksB1c5CljfJZnDhEE7wRtWcPIgdv_2ZHxWO8TAuyT7_mWpVqQ7LeAIcvAhO3IBiSoVpIPdoXP-Xa-YPcRf34A6rRnw8U2hKi1pp1y90d5-OJ4cDrXQ9xISKAyPYDYKn7yrvBEILDtCT4KzK5WrO2Igw6qxEZZC3cg_DRfTvILGwoRBN2kf" style=""/>
+</div>
+<div class="absolute -bottom-6 -left-6 bg-on-tertiary-container text-white p-6 font-h3 uppercase tracking-tighter shadow-xl" style="">
+                        Power 30,000 Watts
+                    </div>
+</div>
+</div>
+</div>
+</section>
+<!-- Galería Maquinaria Real -->
+<section class="py-xl bg-white">
+<div class="container mx-auto px-8 max-w-7xl">
+<div class="text-center mb-12">
+<h2 class="font-h2 text-h2 text-primary uppercase" style="">Nuestra Infraestructura Real</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+<div class="border border-outline-variant bg-surface-container-low p-xs">
+<img alt="Mesa de corte de gran formato" class="w-full h-[450px] object-cover grayscale hover:grayscale-0 transition-all duration-500" data-alt="Large-scale industrial fiber laser cutting machine with yellow safety arms on a long black cutting bed in a factory setting." src="https://lh3.googleusercontent.com/aida/ADBb0uhP2FZR8B34lafbHOOu0jWvo86BRjQCsviDZJe2QNs42qdiD1mm3e133wgkAGKhQOC3FR-Q85i4EXnRH6UTFmQvpIJzltR2YPedZ5IIZqdJqzLCkCQ3w_Fsxy_UPJsF2GOuGevSj6VNvT7vEbq6LcuJWr4qsdAZFnpHi2651LMiW7Rl938kFiMy_O1K3iR4XRBKmmKQE9psnXW5kAjQVq9bM1tw8eJcSeX2bivamtf3X2wKYM1mLY1c1gTaNUOeE0QEl0LSUCnfEss" style=""/>
+<div class="p-4 bg-white">
+<p class="font-technical-data text-primary font-bold uppercase" style="">Mesa de Corte de Gran Formato - 10m x 3m</p>
+</div>
+</div>
+<div class="border border-outline-variant bg-surface-container-low p-xs">
+<img alt="Componentes de minería de alta precisión" class="w-full h-[450px] object-cover grayscale hover:grayscale-0 transition-all duration-500" data-alt="Precision-cut heavy metal components for industrial use, showing clean edges and high-quality fabrication" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBaqc28svDvP510aArHHYc4vTq0hI2N8cswxOddON3UjcYJo41B-SM29OoEM5u_CQuuKGAdLa_WEGZziFQo9VebuLYCfUkKb0G3OqgfNMl1s8lFJqFnGnbBNhj8M8DWLAUmV1tFTI4p4AUnpBY8r7jkhVaw-F_kLeeBjOb2BkbXTbMf3bf2POqlw6n2cYbCXEomcZVb2GD0iKDqxTuo7RxgsPzJpeNrcSshUnMsyTxL8BjMgmxSnzGUIFIBJBITzvX6Ls6heBx2AjaD" style=""/>
+<div class="p-4 bg-white">
+<p class="font-technical-data text-primary font-bold uppercase" style="">Fabricación de Componentes - Alta Precisión</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Misión y Visión Section -->
+<section class="py-xl bg-surface-container-low">
+<div class="container mx-auto px-8 max-w-7xl">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-lg">
+<div class="bg-white p-lg border border-outline-variant">
+<span class="material-symbols-outlined text-on-tertiary-container mb-6" style="">target</span>
+<h3 class="font-h3 text-h3 text-primary mb-4 uppercase" style="">Misión</h3>
+<p class="font-body-md text-on-surface-variant" style="">
+                        Proveer soluciones de corte láser de alta precisión y potencia que superen los estándares industriales, contribuyendo al desarrollo de la infraestructura minera y metalmecánica del país mediante tecnología de vanguardia y excellence operativa.
+                    </p>
+</div>
+<div class="bg-white p-lg border border-outline-variant">
+<span class="material-symbols-outlined text-on-tertiary-container mb-6" style="">visibility</span>
+<h3 class="font-h3 text-h3 text-primary mb-4 uppercase" style="">Visión</h3>
+<p class="font-body-md text-on-surface-variant" style="">
+                        Consolidarnos para el 2030 como el referente nacional indiscutible en procesamiento de metales de gran formato y alta dureza, siendo reconocidos por nuestra capacidad técnica disruptiva y la confiabilidad total en nuestros procesos de ingeniería.
+                    </p>
 </div>
 </div>
 </div>
 </section>
 </main>
-<footer class="bg-blue-950 text-white w-full py-12 border-t border-white/10">
-<div class="max-w-7xl mx-auto px-8 text-center">
-<p class="text-xs text-white/40 uppercase tracking-widest font-medium">
-        © 2024 INCORLASER S.A.C. | RUC: 20614188295
-      </p>
+<!-- Footer -->
+<footer class="bg-[#001F58] text-white w-full py-16 border-t border-slate-900">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8 px-8 max-w-7xl mx-auto">
+<div class="space-y-8">
+<div class="space-y-4">
+<div class="text-2xl font-extrabold text-white tracking-tighter">INCORLASER S.A.C</div>
+<div class="space-y-1">
+<p class="text-slate-400 text-[10px] font-bold uppercase tracking-[0.2em]">RUC 20614188295</p>
+<p class="text-slate-400 text-[10px] font-medium uppercase tracking-[0.15em] leading-relaxed">Urb. Santa Amelia Mza. B Lote 5,<br/>Comas, Lima – Perú.</p>
+</div>
+</div>
+<p class="text-slate-500 text-[10px] uppercase tracking-widest">
+        © 2024 INCORLASER S.A.C - Todos los derechos reservados.
+    </p>
+</div>
+<div class="flex flex-col md:items-end justify-between gap-8">
+<div class="flex flex-wrap md:flex-nowrap gap-x-8 gap-y-4">
+<a class="text-slate-400 hover:text-white text-[11px] font-bold uppercase tracking-[0.2em] transition-colors duration-300" href="index.html">Inicio</a>
+<a class="text-slate-400 hover:text-white text-[11px] font-bold uppercase tracking-[0.2em] transition-colors duration-300" href="servicios.html">Servicios</a>
+<a class="text-slate-400 hover:text-white text-[11px] font-bold uppercase tracking-[0.2em] transition-colors duration-300" href="nosotros.html">Nosotros</a>
+<a class="text-slate-400 hover:text-white text-[11px] font-bold uppercase tracking-[0.2em] transition-colors duration-300" href="calidad.html">Calidad</a>
+<a class="text-slate-400 hover:text-white text-[11px] font-bold uppercase tracking-[0.2em] transition-colors duration-300" href="contacto.html">Contacto</a>
+</div>
+</div>
 </div>
 </footer>
 </body></html>
