@@ -117,6 +117,14 @@
         .btn-hover:active { transform: translateY(-1px) scale(0.98); }
         #whatsapp-menu { transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55); transform: scale(0); opacity: 0; transform-origin: bottom right; visibility: hidden; }
         #whatsapp-menu.show { transform: scale(1); opacity: 1; visibility: visible; }
+            /* Lightbox Style */
+        .lightbox { display: none; position: fixed; inset: 0; background: rgba(0, 31, 88, 0.95); z-index: 200; align-items: center; justify-content: center; backdrop-filter: blur(10px); cursor: zoom-out; }
+        .lightbox.active { display: flex; animation: fadeIn 0.3s ease; }
+        .lightbox img { max-width: 90%; max-height: 90vh; border-radius: 8px; box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5); transform: scale(0.9); transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1); }
+        .lightbox.active img { transform: scale(1); }
+        .zoom-trigger { cursor: zoom-in; transition: transform 0.3s ease; }
+        .zoom-trigger:hover { transform: scale(1.02); filter: brightness(1.05); }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
     </style>
 </head>
 <body class="font-body-md text-on-surface">
@@ -448,5 +456,18 @@
         });
     });
 </script>
+<!-- Lightbox Zoom -->
+<div id="document-zoom" class="lightbox" onclick="this.classList.remove('active')">
+    <img src="https://lh3.googleusercontent.com/pw/AP1GczNBv0I4jFzJ_7P_9B_Z_Xk_z_Xk_z_Xk_z_Xk_z_Xk_z_Xk_z_Xk_z_Xk_z_Xk_z_Xk_z_Xk_z_Xk_z_Xk_z_Xk_z_Xk_z_Xk=w1920-h1080-no" class="zoom-trigger" onclick="openZoom(this.src)" alt="Zoom Procedimiento">
+</div>
+
+<script>
+    function openZoom(src) {
+        const lb = document.getElementById('document-zoom');
+        lb.querySelector('img').src = src;
+        lb.classList.add('active');
+    }
+</script>
 </body></html>
+
 
