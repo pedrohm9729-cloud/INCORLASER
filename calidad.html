@@ -120,8 +120,8 @@
             /* Lightbox Style */
         .lightbox { display: none; position: fixed; inset: 0; background: rgba(0, 31, 88, 0.95); z-index: 200; align-items: center; justify-content: center; backdrop-filter: blur(10px); cursor: zoom-out; }
         .lightbox.active { display: flex; animation: fadeIn 0.3s ease; }
-        .lightbox img { max-width: 90%; max-height: 90vh; border-radius: 8px; box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5); transform: scale(0.9); transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1); }
-        .lightbox.active img { transform: scale(1); }
+        .lightbox .lb-content { max-width: 95%; max-height: 95vh; border-radius: 8px; box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5); transform: scale(0.9); transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1); }
+        .lightbox.active .lb-content { transform: scale(1); }
         .zoom-trigger { cursor: zoom-in; transition: transform 0.3s ease; }
         .zoom-trigger:hover { transform: scale(1.02); filter: brightness(1.05); }
         @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
