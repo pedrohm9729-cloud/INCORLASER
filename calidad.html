@@ -274,10 +274,12 @@
 <div class="lg:col-span-5 flex justify-center">
 <div class="relative group max-w-sm">
 <div class="absolute -inset-2 bg-on-tertiary-container opacity-20 blur-xl group-hover:opacity-30 transition-opacity"></div>
-<div class="relative bg-white border border-outline-variant p-2 shadow-2xl rotate-2 group-hover:rotate-0 transition-transform duration-500">
-<img alt="Documento de Procedimiento" class="w-full h-auto zoom-trigger" onclick="openZoom(this.src)" style="cursor: zoom-in;" src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&q=80"/>
-<div class="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-<span class="material-symbols-outlined text-white text-6xl">zoom_in</span>
+<div class="relative bg-white border border-outline-variant p-2 shadow-2xl rotate-2 group-hover:rotate-0 transition-transform duration-500 cursor-pointer" onclick="openZoom('assets/procedimiento-calidad.pdf')">
+<div class="w-full h-[450px] overflow-hidden pointer-events-none border border-slate-200">
+<iframe src="assets/procedimiento-calidad.pdf#toolbar=0&navpanes=0&scrollbar=0&view=FitH" class="w-full h-[550px] -mt-[50px]" style="border: none;"></iframe>
+</div>
+<div class="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center pointer-events-none">
+<span class="material-symbols-outlined text-white text-6xl drop-shadow-md">zoom_in</span>
 </div>
 </div>
 </div>
@@ -435,14 +437,20 @@
     });
 </script>
 <!-- Lightbox Zoom -->
-<div id="document-zoom" class="lightbox" onclick="this.classList.remove('active')">
-    <img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&q=80" class="zoom-trigger" onclick="openZoom(this.src)" style="cursor: zoom-in;" alt="Zoom Procedimiento" style="cursor: zoom-out;">
+<div id="document-zoom" class="lightbox" onclick="if(event.target === this) this.classList.remove('active')">
+    <div class="lb-content w-[95%] max-w-5xl h-[90vh] bg-white rounded-xl overflow-hidden relative flex flex-col shadow-2xl">
+        <div class="bg-primary text-white px-6 py-4 flex justify-between items-center z-10 shadow-md">
+            <span class="font-bold tracking-widest text-sm uppercase">Vista Previa del Documento - INCORLASER</span>
+            <button onclick="document.getElementById('document-zoom').classList.remove('active')" class="hover:text-accent-orange transition-colors"><span class="material-symbols-outlined text-3xl">close</span></button>
+        </div>
+        <iframe id="zoom-iframe" src="" class="w-full flex-1 bg-slate-100" style="border: none;"></iframe>
+    </div>
 </div>
 
 <script>
     function openZoom(src) {
         const lb = document.getElementById('document-zoom');
-        lb.querySelector('img').src = src;
+        lb.querySelector('iframe').src = src;
         lb.classList.add('active');
     }
 </script>
