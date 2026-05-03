@@ -505,6 +505,20 @@
 </button>
 
 <script>
+    function openLightbox(src) {
+        const lb = document.getElementById('global-lightbox');
+        const lbImg = document.getElementById('lb-image');
+        lbImg.src = src;
+        lb.classList.remove('hidden');
+        lb.classList.add('flex');
+        document.body.style.overflow = 'hidden';
+    }
+    function closeLightbox() {
+        const lb = document.getElementById('global-lightbox');
+        lb.classList.add('hidden');
+        lb.classList.remove('flex');
+        document.body.style.overflow = 'auto';
+    }
     function openWaModal() {
         const modal = document.getElementById('wa-modal-overlay');
         modal.classList.remove('hidden');
@@ -541,7 +555,17 @@
         closeWaModal();
     }
 </script>
-\n</body></html>
+
+<!-- Global Lightbox -->
+<div id="global-lightbox" class="fixed inset-0 z-[300] hidden items-center justify-center bg-[#000b2b]/95 backdrop-blur-md cursor-zoom-out" onclick="closeLightbox()">
+    <div class="relative max-w-[95%] max-h-[95vh] animate-in zoom-in-95 duration-300">
+        <img id="lb-image" src="" alt="Zoom Procedimiento" class="max-w-full max-h-[90vh] shadow-2xl border border-white/10 rounded-sm">
+        <button class="absolute -top-12 right-0 text-white flex items-center gap-2 font-bold text-xs uppercase tracking-widest hover:text-[#FF6A00] transition-colors">
+            Cerrar <span class="material-symbols-outlined">close</span>
+        </button>
+    </div>
+</div>
+</body></html>
 
 
 
