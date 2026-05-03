@@ -411,180 +411,7 @@
 </div>
 </div>
 </div>
-</footer>
-
-
-  
-
-
-  <script>
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) entry.target.classList.add('active');
-        });
-    }, { threshold: 0.1 });
-
-    document.querySelectorAll('section, .reveal').forEach(el => {
-        el.classList.add('reveal');
-        observer.observe(el);
-    });
-
-    document.querySelectorAll('.btn-hover').forEach(btn => {
-        btn.addEventListener('click', function() {
-            this.style.transform = 'scale(0.95)';
-            setTimeout(() => this.style.transform = '', 150);
-        });
-    });
-</script>
-<!-- Lightbox Zoom -->
-<div id="document-zoom" class="lightbox" onclick="if(event.target === this) this.classList.remove('active')">
-    <div class="lb-content w-[95%] max-w-5xl h-[90vh] bg-white rounded-xl overflow-hidden relative flex flex-col shadow-2xl">
-        <div class="bg-primary text-white px-6 py-4 flex justify-between items-center z-10 shadow-md">
-            <span class="font-bold tracking-widest text-sm uppercase">Vista Previa del Documento - INCORLASER</span>
-            <button onclick="document.getElementById('document-zoom').classList.remove('active')" class="hover:text-accent-orange transition-colors"><span class="material-symbols-outlined text-3xl">close</span></button>
-        </div>
-        <iframe id="zoom-iframe" src="" class="w-full flex-1 bg-slate-100" style="border: none;"></iframe>
-    </div>
-</div>
-
-<script>
-    function openZoom(src) {
-        const lb = document.getElementById('document-zoom');
-        lb.querySelector('iframe').src = src;
-        lb.classList.add('active');
-    }
-</script>
-
-<!-- WhatsApp Floating Button -->
-<div class="fixed bottom-8 right-8 z-[100] flex flex-col items-end gap-0">
-    <div id="wsp-message" class="bg-white px-4 py-2 rounded-lg shadow-xl border border-slate-100 text-sm font-bold text-primary mb-4 hidden md:block opacity-0 translate-y-2 transition-all duration-300">
-        ¿En qué podemos ayudarte?
-    </div>
-    <a href="https://wa.me/51981184756" target="_blank" class="bg-[#25D366] text-white w-16 h-16 rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition-transform duration-300 group relative">
-        <svg class="w-8 h-8 fill-current" viewBox="0 0 24 24">
-            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.67-1.614-.917-2.214-.242-.584-.487-.506-.67-.515-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-        </svg>
-        <span class="absolute -top-1 -right-1 w-4 h-4 bg-red-500 rounded-full border-2 border-white animate-ping"></span>
-        <span class="absolute -top-1 -right-1 w-4 h-4 bg-red-500 rounded-full border-2 border-white"></span>
-    </a>
-</div>
-
-<script>
-    setTimeout(() => {
-        const msg = document.getElementById('wsp-message');
-        if (msg) {
-            msg.classList.remove('opacity-0', 'translate-y-2');
-            msg.classList.add('opacity-100', 'translate-y-0');
-        }
-    }, 3000);
-</script>
-
-
-<!-- Enhanced WhatsApp Floating Button with Form and Multi-Agent -->
-<div class="fixed bottom-8 right-8 z-[100] flex flex-col items-end">
-    <!-- WhatsApp Menu/Form Card -->
-    <div id="wsp-card" class="bg-white w-80 rounded-2xl shadow-2xl border border-slate-100 overflow-hidden mb-4 hidden opacity-0 translate-y-4 transition-all duration-300">
-        <!-- Header -->
-        <div class="bg-[#001F58] p-6 text-white relative">
-            <button onclick="toggleWspCard()" class="absolute top-4 right-4 text-white/50 hover:text-white transition-colors">
-                <span class="material-symbols-outlined">close</span>
-            </button>
-            <div class="text-xl font-black font-display tracking-tight mb-1">WhatsApp Chat</div>
-            <div class="text-[10px] text-white/60 uppercase tracking-widest font-label">Atención Inmediata Incorlaser</div>
-        </div>
-        
-        <!-- View 1: Form -->
-        <div id="wsp-view-form" class="p-6 space-y-4">
-            <div class="text-sm text-slate-600 font-medium leading-tight">Por favor, déjanos tu nombre para brindarte una mejor atención:</div>
-            <div class="space-y-3">
-                <input type="text" id="wsp-name" placeholder="Tu nombre completo" class="w-full px-4 py-3 rounded-xl border border-slate-200 text-sm focus:border-accent-orange focus:ring-0 transition-all outline-none">
-                <select id="wsp-interest" class="w-full px-4 py-3 rounded-xl border border-slate-200 text-sm focus:border-accent-orange focus:ring-0 transition-all outline-none bg-white">
-                    <option value="">¿En qué servicio estás interesado?</option>
-                    <option value="Corte Láser">Corte Láser 30kW</option>
-                    <option value="Corte en Bisel">Corte en Bisel</option>
-                    <option value="Hardox">Piezas en Hardox</option>
-                    <option value="Otros">Otros Servicios</option>
-                </select>
-            </div>
-            <button onclick="submitWspForm()" class="w-full bg-[#25D366] text-white py-4 rounded-xl font-bold uppercase text-[10px] tracking-widest hover:bg-green-600 transition-all shadow-lg shadow-green-100">
-                Contactar con un Asesor
-            </button>
-        </div>
-
-        <!-- View 2: Advisor Selection -->
-        <div id="wsp-view-advisors" class="p-6 space-y-3 hidden">
-            <div class="text-sm text-slate-600 font-medium mb-2">Selecciona el asesor de tu preferencia:</div>
-            
-            <a href="javascript:void(0)" onclick="openWhatsApp('51981184756')" class="flex items-center gap-4 p-4 rounded-xl border border-slate-100 hover:bg-slate-50 hover:border-accent-orange/20 transition-all group">
-                <div class="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center text-green-600 group-hover:bg-[#25D366] group-hover:text-white transition-all">
-                    <span class="material-symbols-outlined">person</span>
-                </div>
-                <div>
-                    <div class="text-[9px] text-slate-400 font-bold uppercase tracking-widest leading-none mb-1">Ventas / Proyectos</div>
-                    <div class="text-sm font-black text-primary font-headline">Asesor Comercial 1</div>
-                </div>
-            </a>
-
-            <a href="javascript:void(0)" onclick="openWhatsApp('51940374577')" class="flex items-center gap-4 p-4 rounded-xl border border-slate-100 hover:bg-slate-50 hover:border-accent-orange/20 transition-all group">
-                <div class="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center text-green-600 group-hover:bg-[#25D366] group-hover:text-white transition-all">
-                    <span class="material-symbols-outlined">person</span>
-                </div>
-                <div>
-                    <div class="text-[9px] text-slate-400 font-bold uppercase tracking-widest leading-none mb-1">Atención al Cliente</div>
-                    <div class="text-sm font-black text-primary font-headline">Asesor Comercial 2</div>
-                </div>
-            </a>
-        </div>
-    </div>
-
-    <!-- Main Button -->
-    <button onclick="toggleWspCard()" class="bg-[#25D366] text-white w-16 h-16 rounded-full flex items-center justify-center shadow-2xl hover:scale-110 active:scale-95 transition-all duration-300 group relative z-[101]">
-        <svg class="w-8 h-8 fill-current" viewBox="0 0 24 24">
-            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.67-1.614-.917-2.214-.242-.584-.487-.506-.67-.515-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-        </svg>
-        <span class="absolute -top-1 -right-1 w-4 h-4 bg-red-500 rounded-full border-2 border-white animate-ping"></span>
-    </button>
-</div>
-
-<script>
-    function toggleWspCard() {
-        const card = document.getElementById('wsp-card');
-        if (card.classList.contains('hidden')) {
-            card.classList.remove('hidden');
-            setTimeout(() => {
-                card.classList.remove('opacity-0', 'translate-y-4');
-                card.classList.add('opacity-100', 'translate-y-0');
-            }, 10);
-        } else {
-            card.classList.remove('opacity-100', 'translate-y-0');
-            card.classList.add('opacity-0', 'translate-y-4');
-            setTimeout(() => card.classList.add('hidden'), 300);
-        }
-    }
-
-    function submitWspForm() {
-        const name = document.getElementById('wsp-name').value;
-        if (!name) {
-            document.getElementById('wsp-name').classList.add('border-red-500');
-            return;
-        }
-        document.getElementById('wsp-view-form').classList.add('hidden');
-        document.getElementById('wsp-view-advisors').classList.remove('hidden');
-    }
-
-    function openWhatsApp(number) {
-        const name = document.getElementById('wsp-name').value;
-        const interest = document.getElementById('wsp-interest').value;
-        let text = `Hola, mi nombre es ${name}.`;
-        if (interest) text += ` Estoy interesado en información sobre ${interest}.`;
-        else text += ` Me gustaría solicitar información sobre sus servicios de corte láser.`;
-        
-        window.open(`https://wa.me/${number}?text=${encodeURIComponent(text)}`, '_blank');
-        toggleWspCard();
-    }
-</script>
-
-
+</footer>\n
 <!-- Lead Form Overlay (Restored from version 837c5ca) -->
 <div id="wa-modal-overlay" class="fixed inset-0 bg-[#001F58]/95 backdrop-filter blur-md z-[200] hidden items-center justify-center p-4">
     <div class="bg-white w-full max-w-md rounded-3xl shadow-2xl overflow-hidden">
@@ -596,7 +423,6 @@
             <div class="text-3xl font-black font-display tracking-tighter mb-2 italic">INCORLASER</div>
             <p class="text-xs text-[#FF6A00] font-bold uppercase tracking-[0.2em]">Atención Industrial Inmediata</p>
         </div>
-
         <!-- Content -->
         <div class="p-8">
             <div id="lead-inputs-container" class="space-y-6">
@@ -619,7 +445,6 @@
                     </div>
                 </div>
             </div>
-
             <!-- Advisor Reveal Area -->
             <div id="p-wa-advisors" class="hidden space-y-4 py-4">
                 <p class="text-sm font-bold text-primary mb-4 text-center">Seleccione un asesor para iniciar el chat:</p>
@@ -633,17 +458,14 @@
                         <div><p class="text-[10px] text-slate-400 font-bold uppercase tracking-widest">Atención Ventas</p><p class="text-sm font-black text-[#001F58]">Asesor Comercial 2</p></div>
                     </button>
                 </div>
-
                 <div class="bg-slate-50 p-5 rounded-2xl flex items-start gap-4 border border-slate-100">
                     <span class="material-symbols-outlined text-[#001F58]">info</span>
                     <p class="text-[11px] text-slate-500 leading-relaxed font-body">Al hacer clic en continuar, será redirigido a nuestra plataforma de WhatsApp Business para adjuntar sus planos en formato .DXF o .DWG.</p>
                 </div>
-
                 <button id="p-wa-submit" onclick="pRevealAdvisors()" class="w-full bg-[#FF6A00] text-white py-5 rounded-xl font-black text-xs uppercase tracking-[0.2em] flex items-center justify-center gap-4 hover:bg-orange-700 transition-all shadow-xl shadow-orange-500/20 active:scale-95">
                     <span class="material-symbols-outlined">chat</span>
                     CONTINUAR A WHATSAPP
                 </button>
-
                 <div class="text-center pt-4">
                     <p class="text-[9px] text-slate-300 uppercase tracking-[0.3em] font-bold">INCORLASER © 2024 - SOLUCIONES INDUSTRIALES DE PRECISIÓN</p>
                 </div>
@@ -651,52 +473,43 @@
         </div>
     </div>
 </div>
-
 <!-- Floating Button (Visual Style from 4e8b209) -->
 <button onclick="openWaModal()" class="fixed bottom-8 right-8 bg-[#25D366] text-white w-16 h-16 rounded-full shadow-2xl flex items-center justify-center hover:scale-110 transition-transform active:scale-95 z-[150] btn-hover">
     <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
 </button>
-
 <script>
     function openWaModal() {
         document.getElementById('wa-modal-overlay').classList.remove('hidden');
         document.getElementById('wa-modal-overlay').classList.add('flex');
     }
-
     function closeWaModal() {
         document.getElementById('wa-modal-overlay').classList.add('hidden');
         document.getElementById('wa-modal-overlay').classList.remove('flex');
     }
-
     function pRevealAdvisors() {
         const name = document.getElementById('p-lead-name').value;
         const rs = document.getElementById('p-lead-rs').value;
         const ruc = document.getElementById('p-lead-ruc').value;
         const email = document.getElementById('p-lead-email').value;
-
         if (!name || !rs || !ruc || !email) {
             alert('Por favor, complete todos los campos corporativos para continuar.');
             return;
         }
-
         document.getElementById('lead-inputs-container').classList.add('hidden');
         document.getElementById('p-wa-submit').classList.add('hidden');
         document.getElementById('p-wa-advisors').classList.remove('hidden');
     }
-
     function pContactAdvisor(phone) {
         const name = document.getElementById('p-lead-name').value;
         const rs = document.getElementById('p-lead-rs').value;
         const ruc = document.getElementById('p-lead-ruc').value;
         const email = document.getElementById('p-lead-email').value;
-        
         const message = encodeURIComponent('Hola INCORLASER, mi nombre es ' + name + ' de la empresa ' + rs + ' (RUC: ' + ruc + '). Mi correo es ' + email + '. Quisiera solicitar una cotización industrial.');
         window.open('https://wa.me/' + phone + '?text=' + message, '_blank');
         closeWaModal();
     }
 </script>
-
-</body></html>
+\n</body></html>
 
 
 
