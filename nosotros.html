@@ -397,99 +397,165 @@ Obtenemos acabados perfectos sin importar la robustez del material<span style="c
 </div>
 </div>
 </footer>\n
-<!-- Lead Form Overlay (Restored from version 837c5ca) -->
-<div id="wa-modal-overlay" class="fixed inset-0 bg-[#001F58]/95 backdrop-filter blur-md z-[200] hidden items-center justify-center p-4">
-    <div class="bg-white w-full max-w-md rounded-3xl shadow-2xl overflow-hidden">
-        <!-- Header -->
-        <div class="bg-[#001F58] p-8 text-white relative">
-            <button onclick="closeWaModal()" class="absolute top-6 right-6 text-white/50 hover:text-white transition-colors">
-                <span class="material-symbols-outlined">close</span>
-            </button>
-            <div class="text-3xl font-black font-display tracking-tighter mb-2 italic">INCORLASER</div>
-            <p class="text-xs text-[#FF6A00] font-bold uppercase tracking-[0.2em]">Atención Industrial Inmediata</p>
+<!-- PREMIMUM LEAD FORM MODAL (Restored from version 837c5ca + User provided style) -->
+<style>
+    #wa-modal-overlay {
+        background: rgba(0, 31, 88, 0.95);
+        backdrop-filter: blur(12px);
+    }
+    .hard-shadow {
+        box-shadow: 2px 2px 0px 0px #001F58;
+    }
+    .wa-input-group:focus-within .material-symbols-outlined {
+        color: #001F58 !important;
+    }
+</style>
+
+<div id="wa-modal-overlay" class="fixed inset-0 z-[200] hidden items-center justify-center p-4">
+    <div class="w-full max-w-[1000px] grid md:grid-cols-12 bg-white border border-slate-200 overflow-hidden shadow-2xl relative animate-in fade-in zoom-in duration-300">
+        <!-- Close Button -->
+        <button onclick="closeWaModal()" class="absolute top-4 right-4 z-50 bg-white/10 hover:bg-white/20 text-white rounded-full p-2 transition-all">
+            <span class="material-symbols-outlined text-2xl">close</span>
+        </button>
+
+        <!-- Left Panel: Contextual Visual -->
+        <div class="hidden md:block md:col-span-5 relative overflow-hidden h-[600px]">
+            <div class="absolute inset-0 bg-[#001F58]/40 z-10 mix-blend-multiply"></div>
+            <img class="absolute inset-0 w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBPEkUyPZMTUEuMXCFt6dw8UYPKIpYIPCuyRHUR5DnHQ_3sYKyXZCrt7mFK00kg2qwo5E9eVH4A8vmxeO7UMYqlcZSD82f3F42KbjDAr1m6WR85f1RD3_9ENnM8gsf3ucxUcQ5P-uOVh6rPUWkTj5y41-Cp0tCuz1a8ZVzzXgh7wG042OksyHgSiqBMyFPzQR1hL3_SsbeB6R69sbxMeqTLURbs3yca_BjikKR9vHjy6iJOU8A2-daRLSTy8YzZ-brgpHGZnN-ch4t0" alt="Industrial Laser"/>
+            <div class="relative z-20 h-full p-8 flex flex-col justify-end text-white">
+                <span class="inline-block px-3 py-1 bg-[#FF6A00] text-white font-bold mb-4 uppercase text-[10px] tracking-[0.2em] w-fit">Expertos en Hardox</span>
+                <h2 class="text-2xl font-black leading-tight mb-2 uppercase">Ingeniería de Corte de Alta Potencia</h2>
+                <p class="text-white/80 text-xs leading-relaxed">Transformamos el acero con la precisión milimétrica que su industria exige.</p>
+            </div>
         </div>
-        <!-- Content -->
-        <div class="p-8">
-            <div id="lead-inputs-container" class="space-y-6">
-                <div class="space-y-2">
-                    <label class="text-[10px] font-black text-slate-400 uppercase tracking-widest">Nombre Completo</label>
-                    <input type="text" id="p-lead-name" class="w-full bg-slate-50 border-none rounded-xl h-14 px-6 focus:ring-2 focus:ring-[#FF6A00] transition-all outline-none" placeholder="Ej: Ing. Carlos Ruiz">
-                </div>
-                <div class="space-y-2">
-                    <label class="text-[10px] font-black text-slate-400 uppercase tracking-widest">Empresa / Razón Social</label>
-                    <input type="text" id="p-lead-rs" class="w-full bg-slate-50 border-none rounded-xl h-14 px-6 focus:ring-2 focus:ring-[#FF6A00] transition-all outline-none" placeholder="Nombre de su compañía">
-                </div>
-                <div class="grid grid-cols-2 gap-4">
-                    <div class="space-y-2">
-                        <label class="text-[10px] font-black text-slate-400 uppercase tracking-widest">RUC</label>
-                        <input type="text" id="p-lead-ruc" class="w-full bg-slate-50 border-none rounded-xl h-14 px-6 focus:ring-2 focus:ring-[#FF6A00] transition-all outline-none" placeholder="11 dígitos">
+
+        <!-- Right Panel: Quotation Form -->
+        <div class="md:col-span-7 flex flex-col bg-white">
+            <div class="bg-[#001F58] p-8">
+                <h1 class="text-white text-2xl font-black mb-1 uppercase tracking-tight">Centro de Atención</h1>
+                <p class="text-blue-200/70 text-sm">Complete sus datos corporativos para iniciar el proceso de cotización técnica.</p>
+            </div>
+
+            <div class="p-8 flex-grow">
+                <!-- VIEW 1: LEAD FORM -->
+                <form id="lead-form-view" class="space-y-6">
+                    <div class="space-y-4">
+                        <!-- RAZÓN SOCIAL -->
+                        <div class="space-y-1 wa-input-group">
+                            <label class="block text-[10px] font-bold text-slate-400 uppercase tracking-widest">RAZÓN SOCIAL</label>
+                            <div class="relative">
+                                <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-300">business</span>
+                                <input type="text" id="p-lead-rs" class="w-full pl-10 pr-4 py-3 border border-slate-200 bg-slate-50 focus:ring-1 focus:ring-[#001F58] focus:border-[#001F58] rounded-lg outline-none transition-all text-sm" placeholder="Nombre de la empresa">
+                            </div>
+                        </div>
+                        <!-- RUC -->
+                        <div class="space-y-1 wa-input-group">
+                            <label class="block text-[10px] font-bold text-slate-400 uppercase tracking-widest">RUC</label>
+                            <div class="relative">
+                                <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-300">badge</span>
+                                <input type="number" id="p-lead-ruc" class="w-full pl-10 pr-4 py-3 border border-slate-200 bg-slate-50 focus:ring-1 focus:ring-[#001F58] focus:border-[#001F58] rounded-lg outline-none transition-all text-sm" placeholder="Ingrese 11 dígitos">
+                            </div>
+                        </div>
+                        <!-- CORREO -->
+                        <div class="space-y-1 wa-input-group">
+                            <label class="block text-[10px] font-bold text-slate-400 uppercase tracking-widest">CORREO CORPORATIVO</label>
+                            <div class="relative">
+                                <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-300">alternate_email</span>
+                                <input type="email" id="p-lead-email" class="w-full pl-10 pr-4 py-3 border border-slate-200 bg-slate-50 focus:ring-1 focus:ring-[#001F58] focus:border-[#001F58] rounded-lg outline-none transition-all text-sm" placeholder="ejemplo@empresa.com">
+                            </div>
+                        </div>
                     </div>
-                    <div class="space-y-2">
-                        <label class="text-[10px] font-black text-slate-400 uppercase tracking-widest">Correo</label>
-                        <input type="email" id="p-lead-email" class="w-full bg-slate-50 border-none rounded-xl h-14 px-6 focus:ring-2 focus:ring-[#FF6A00] transition-all outline-none" placeholder="corporativo@">
+
+                    <div class="bg-slate-50 p-4 border border-slate-100 flex items-start gap-3">
+                        <span class="material-symbols-outlined text-[#001F58] text-xl">info</span>
+                        <p class="text-[11px] text-slate-500 leading-tight">
+                            Al hacer clic en continuar, será redirigido a nuestra plataforma de WhatsApp Business para adjuntar sus planos en formato .DXF o .DWG.
+                        </p>
                     </div>
+
+                    <button onclick="revealAdvisors()" type="button" class="w-full bg-[#FF6A00] hover:bg-[#e86000] active:scale-[0.98] transition-all py-5 flex items-center justify-center gap-3 text-white font-black uppercase tracking-wider text-xs hard-shadow">
+                        <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">chat</span>
+                        CONTINUAR A WHATSAPP
+                    </button>
+                </form>
+
+                <!-- VIEW 2: ADVISOR SELECTION (Hidden) -->
+                <div id="advisor-selection-view" class="hidden space-y-4 animate-in fade-in slide-in-from-bottom-4 duration-500">
+                    <p class="text-sm font-bold text-[#001F58] mb-4 text-center">Seleccione un asesor especializado:</p>
+                    
+                    <button onclick="contactAdvisor('51940374577')" class="w-full flex items-center gap-4 p-4 border border-slate-100 rounded-xl hover:bg-slate-50 hover:border-[#FF6A00]/30 transition-all text-left group">
+                        <div class="bg-[#25D366] text-white p-3 rounded-full group-hover:rotate-12 transition-transform">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                        </div>
+                        <div>
+                            <p class="text-[10px] text-slate-400 font-bold uppercase tracking-widest">Atención Ventas</p>
+                            <p class="text-sm font-black text-[#001F58]">Asesor Comercial 1</p>
+                        </div>
+                    </button>
+
+                    <button onclick="contactAdvisor('51981184756')" class="w-full flex items-center gap-4 p-4 border border-slate-100 rounded-xl hover:bg-slate-50 hover:border-[#FF6A00]/30 transition-all text-left group">
+                        <div class="bg-[#25D366] text-white p-3 rounded-full group-hover:rotate-12 transition-transform">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                        </div>
+                        <div>
+                            <p class="text-[10px] text-slate-400 font-bold uppercase tracking-widest">Atención Ventas</p>
+                            <p class="text-sm font-black text-[#001F58]">Asesor Comercial 2</p>
+                        </div>
+                    </button>
+
+                    <button onclick="backToForm()" class="w-full text-center text-[10px] font-bold text-slate-400 uppercase tracking-widest hover:text-[#001F58] transition-colors mt-4">
+                        ← Editar datos del formulario
+                    </button>
                 </div>
             </div>
-            <!-- Advisor Reveal Area -->
-            <div id="p-wa-advisors" class="hidden space-y-4 py-4">
-                <p class="text-sm font-bold text-primary mb-4 text-center">Seleccione un asesor para iniciar el chat:</p>
-                <div class="grid grid-cols-1 gap-3">
-                    <button onclick="pContactAdvisor('51940374577')" class="flex items-center gap-4 p-4 border border-slate-100 rounded-2xl hover:bg-slate-50 transition-all text-left group w-full">
-                        <div class="bg-green-500 text-white p-3 rounded-full group-hover:rotate-12 transition-transform"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></div>
-                        <div><p class="text-[10px] text-slate-400 font-bold uppercase tracking-widest">Atención Ventas</p><p class="text-sm font-black text-[#001F58]">Asesor Comercial 1</p></div>
-                    </button>
-                    <button onclick="pContactAdvisor('51981184756')" class="flex items-center gap-4 p-4 border border-slate-100 rounded-2xl hover:bg-slate-50 transition-all text-left group w-full">
-                        <div class="bg-green-500 text-white p-3 rounded-full group-hover:rotate-12 transition-transform"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></div>
-                        <div><p class="text-[10px] text-slate-400 font-bold uppercase tracking-widest">Atención Ventas</p><p class="text-sm font-black text-[#001F58]">Asesor Comercial 2</p></div>
-                    </button>
-                </div>
-                <div class="bg-slate-50 p-5 rounded-2xl flex items-start gap-4 border border-slate-100">
-                    <span class="material-symbols-outlined text-[#001F58]">info</span>
-                    <p class="text-[11px] text-slate-500 leading-relaxed font-body">Al hacer clic en continuar, será redirigido a nuestra plataforma de WhatsApp Business para adjuntar sus planos en formato .DXF o .DWG.</p>
-                </div>
-                <button id="p-wa-submit" onclick="pRevealAdvisors()" class="w-full bg-[#FF6A00] text-white py-5 rounded-xl font-black text-xs uppercase tracking-[0.2em] flex items-center justify-center gap-4 hover:bg-orange-700 transition-all shadow-xl shadow-orange-500/20 active:scale-95">
-                    <span class="material-symbols-outlined">chat</span>
-                    CONTINUAR A WHATSAPP
-                </button>
-                <div class="text-center pt-4">
-                    <p class="text-[9px] text-slate-300 uppercase tracking-[0.3em] font-bold">INCORLASER © 2024 - SOLUCIONES INDUSTRIALES DE PRECISIÓN</p>
-                </div>
+
+            <div class="px-8 pb-8 text-center">
+                <p class="text-[9px] font-bold text-slate-300 uppercase tracking-widest">
+                    Incorlaser © 2024 - Soluciones Industriales de Precisión
+                </p>
             </div>
         </div>
     </div>
 </div>
-<!-- Floating Button (Visual Style from 4e8b209) -->
-<button onclick="openWaModal()" class="fixed bottom-8 right-8 bg-[#25D366] text-white w-16 h-16 rounded-full shadow-2xl flex items-center justify-center hover:scale-110 transition-transform active:scale-95 z-[150] btn-hover">
+
+<!-- Floating WhatsApp Button (Visual style from 4e8b209) -->
+<button onclick="openWaModal()" class="fixed bottom-24 md:bottom-8 right-6 w-14 h-14 bg-[#25D366] rounded-full flex items-center justify-center text-white shadow-xl hover:scale-110 transition-transform z-[100] active:scale-95">
     <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
 </button>
+
 <script>
     function openWaModal() {
-        document.getElementById('wa-modal-overlay').classList.remove('hidden');
-        document.getElementById('wa-modal-overlay').classList.add('flex');
+        const modal = document.getElementById('wa-modal-overlay');
+        modal.classList.remove('hidden');
+        modal.classList.add('flex');
+        document.body.style.overflow = 'hidden';
     }
     function closeWaModal() {
-        document.getElementById('wa-modal-overlay').classList.add('hidden');
-        document.getElementById('wa-modal-overlay').classList.remove('flex');
+        const modal = document.getElementById('wa-modal-overlay');
+        modal.classList.add('hidden');
+        modal.classList.remove('flex');
+        document.body.style.overflow = '';
     }
-    function pRevealAdvisors() {
-        const name = document.getElementById('p-lead-name').value;
+    function revealAdvisors() {
         const rs = document.getElementById('p-lead-rs').value;
         const ruc = document.getElementById('p-lead-ruc').value;
         const email = document.getElementById('p-lead-email').value;
-        if (!name || !rs || !ruc || !email) {
+        if (!rs || !ruc || !email) {
             alert('Por favor, complete todos los campos corporativos para continuar.');
             return;
         }
-        document.getElementById('lead-inputs-container').classList.add('hidden');
-        document.getElementById('p-wa-submit').classList.add('hidden');
-        document.getElementById('p-wa-advisors').classList.remove('hidden');
+        document.getElementById('lead-form-view').classList.add('hidden');
+        document.getElementById('advisor-selection-view').classList.remove('hidden');
     }
-    function pContactAdvisor(phone) {
-        const name = document.getElementById('p-lead-name').value;
+    function backToForm() {
+        document.getElementById('lead-form-view').classList.remove('hidden');
+        document.getElementById('advisor-selection-view').classList.add('hidden');
+    }
+    function contactAdvisor(phone) {
         const rs = document.getElementById('p-lead-rs').value;
         const ruc = document.getElementById('p-lead-ruc').value;
         const email = document.getElementById('p-lead-email').value;
-        const message = encodeURIComponent('Hola INCORLASER, mi nombre es ' + name + ' de la empresa ' + rs + ' (RUC: ' + ruc + '). Mi correo es ' + email + '. Quisiera solicitar una cotización industrial.');
+        const message = encodeURIComponent('Hola INCORLASER, de la empresa ' + rs + ' (RUC: ' + ruc + '). Mi correo es ' + email + '. Quisiera solicitar una cotización técnica.');
         window.open('https://wa.me/' + phone + '?text=' + message, '_blank');
         closeWaModal();
     }
