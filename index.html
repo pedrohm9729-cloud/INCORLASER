@@ -52,6 +52,9 @@
         #whatsapp-menu { transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55); transform: scale(0); opacity: 0; transform-origin: bottom right; visibility: hidden; }
         #whatsapp-menu.show { transform: scale(1); opacity: 1; visibility: visible; }
         .glass-effect { backdrop-filter: blur(12px); background: rgba(255, 255, 255, 0.05); border: 1px border-white/10; }
+        .unit-btn { padding: 8px 16px; font-size: 10px; font-weight: 800; border: 2px solid #001F58; color: #001F58; transition: all 0.3s; cursor: pointer; }
+        .unit-btn.active { background: #001F58 !important; color: white !important; }
+        .unit-btn:hover:not(.active) { background: rgba(0, 31, 88, 0.05); }
     </style>
 </head>
 <body class="bg-surface font-body text-on-surface selection:bg-accent-orange/30">
@@ -483,6 +486,17 @@ industria minera y metalmecánica.<o:p></o:p></span></p><p class="" style=""></p
         const message = encodeURIComponent('Hola INCORLASER, soy ' + name + ' de la empresa ' + rs + ' (RUC: ' + ruc + '). Mi correo es ' + email + '. Quisiera solicitar una asesoría técnica.');
         window.open('https://wa.me/' + phone + '?text=' + message, '_blank');
         closeWaModal();
+    }
+
+    // Unidades Métrico/Imperial
+    function setUnit(unit) {
+        document.querySelectorAll('.unit-val').forEach(el => {
+            el.textContent = el.getAttribute('data-' + unit);
+        });
+        document.querySelectorAll('.unit-btn').forEach(btn => {
+            btn.classList.remove('active');
+        });
+        document.getElementById('unit-' + unit).classList.add('active');
     }
 </script>
 \n</body></html>
