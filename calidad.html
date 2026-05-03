@@ -433,67 +433,105 @@
     }
 </style>
 
-<div id="wa-modal-overlay" class="fixed inset-0 z-[200] hidden items-end justify-end p-6 md:p-10">
-    <div class="incor-chat-card w-full max-w-[380px] bg-white rounded-[2.5rem] overflow-hidden relative animate-in slide-in-from-right-10 duration-500">
-        <!-- Header: INCORLASER NAVY -->
-        <div class="bg-[#000b2b] p-8 text-center relative">
-            <button onclick="closeWaModal()" class="absolute top-5 right-5 text-white/30 hover:text-white transition-colors">
-                <span class="material-symbols-outlined text-2xl">close</span>
-            </button>
-            <div class="w-12 h-12 bg-[#FF6A00] rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg shadow-[#FF6A00]/20">
-                <span class="material-symbols-outlined text-white text-2xl">precision_manufacturing</span>
+<div id="wa-modal-overlay" class="fixed inset-0 z-[200] hidden items-center justify-center bg-[#000b2b]/60 backdrop-blur-sm p-4 md:p-8">
+    <div class="w-full max-w-[1000px] grid md:grid-cols-12 bg-white rounded-3xl overflow-hidden shadow-2xl relative animate-in zoom-in-95 duration-500">
+        <!-- Close Button -->
+        <button onclick="closeWaModal()" class="absolute top-5 right-5 z-50 bg-white/10 hover:bg-white/20 p-2 rounded-full text-white md:text-[#000b2b] transition-colors">
+            <span class="material-symbols-outlined text-2xl">close</span>
+        </button>
+
+        <!-- Left Panel: Contextual Visual -->
+        <div class="hidden md:block md:col-span-5 relative overflow-hidden">
+            <div class="absolute inset-0 bg-primary/40 z-10 mix-blend-multiply"></div>
+            <img class="absolute inset-0 w-full h-full object-cover" src="img/detalles-laser.png" alt="Industrial Laser Cutting">
+            <div class="relative z-20 h-full p-10 flex flex-col justify-end text-white bg-gradient-to-t from-primary/80 to-transparent">
+                <span class="inline-block px-3 py-1 bg-[#FF6A00] text-white font-bold text-[10px] tracking-[0.2em] mb-4 uppercase w-fit">Expertos en Hardox</span>
+                <h2 class="text-3xl font-black mb-2 leading-tight uppercase tracking-tighter">Ingeniería de Corte de Alta Potencia</h2>
+                <p class="text-white/80 text-sm font-medium leading-relaxed">Transformamos el acero con la precisión milimétrica que su industria exige.</p>
             </div>
-            <h2 class="text-white text-xl font-black uppercase tracking-tighter">Centro de Atención</h2>
-            <p class="text-[#FF6A00] text-[9px] font-bold uppercase tracking-[0.3em] mt-1">Asesoría Técnica Especializada</p>
         </div>
 
-        <!-- Form Body -->
-        <div class="p-8 pt-6 space-y-4">
-            <div id="lead-form-view" class="space-y-3">
-                <div class="relative">
-                    <span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-slate-300 text-sm">person</span>
-                    <input type="text" id="p-lead-name" class="incor-input w-full bg-slate-50 border-2 border-slate-100 pl-11 pr-5 py-4 rounded-2xl outline-none transition-all text-xs font-bold text-[#000b2b]" placeholder="Nombre completo">
+        <!-- Right Panel: Quotation Form -->
+        <div class="col-span-12 md:col-span-7 flex flex-col h-full">
+            <div id="lead-form-view" class="flex flex-col h-full">
+                <div class="bg-primary p-10">
+                    <h1 class="text-white text-2xl font-black uppercase tracking-tight mb-1">Centro de Atención</h1>
+                    <p class="text-white/60 text-xs font-medium uppercase tracking-widest">Complete sus datos para iniciar la cotización técnica.</p>
                 </div>
-                <div class="relative">
-                    <span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-slate-300 text-sm">business</span>
-                    <input type="text" id="p-lead-rs" class="incor-input w-full bg-slate-50 border-2 border-slate-100 pl-11 pr-5 py-4 rounded-2xl outline-none transition-all text-xs font-bold text-[#000b2b]" placeholder="Razón Social / Empresa">
-                </div>
-                <div class="relative">
-                    <span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-slate-300 text-sm">badge</span>
-                    <input type="number" id="p-lead-ruc" class="incor-input w-full bg-slate-50 border-2 border-slate-100 pl-11 pr-5 py-4 rounded-2xl outline-none transition-all text-xs font-bold text-[#000b2b]" placeholder="RUC (11 dígitos)">
-                </div>
-                <div class="relative">
-                    <span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-slate-300 text-sm">mail</span>
-                    <input type="email" id="p-lead-email" class="incor-input w-full bg-slate-50 border-2 border-slate-100 pl-11 pr-5 py-4 rounded-2xl outline-none transition-all text-xs font-bold text-[#000b2b]" placeholder="Correo corporativo">
-                </div>
-
-                <button onclick="revealAdvisors()" type="button" class="incor-btn-gradient w-full text-white py-5 rounded-2xl flex items-center justify-center gap-3 transition-all font-black tracking-[0.2em] text-[10px] uppercase mt-4 shadow-xl shadow-[#FF6A00]/20 active:scale-95">
-                    CONECTAR CON ASESOR
-                    <span class="material-symbols-outlined text-lg">arrow_forward</span>
-                </button>
-            </div>
-
-            <!-- Advisor Selection (Incor Style) -->
-            <div id="advisor-selection-view" class="hidden space-y-3 animate-in fade-in slide-in-from-bottom-4 duration-300">
-                <p class="text-[10px] font-black text-slate-400 text-center uppercase tracking-widest mb-4">Seleccione su canal de atención:</p>
                 
-                <button onclick="contactAdvisor('51940374577')" class="w-full flex items-center gap-4 p-4 border-2 border-slate-100 rounded-2xl hover:border-[#FF6A00]/30 hover:bg-slate-50 transition-all text-left group">
-                    <div class="bg-[#25D366] text-white p-3 rounded-xl group-hover:rotate-12 transition-transform">
-                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                <div class="p-10 space-y-6 flex-grow">
+                    <div class="space-y-4">
+                        <div class="space-y-2">
+                            <label class="block text-[10px] font-black text-slate-400 uppercase tracking-widest">Nombre Completo</label>
+                            <div class="relative group">
+                                <span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-slate-300 group-focus-within:text-[#FF6A00] transition-colors">person</span>
+                                <input type="text" id="p-lead-name" class="w-full bg-slate-50 border-2 border-slate-100 pl-12 pr-5 py-4 rounded-2xl outline-none focus:border-[#FF6A00]/30 focus:bg-white transition-all text-sm font-bold text-primary" placeholder="Su nombre">
+                            </div>
+                        </div>
+                        <div class="space-y-2">
+                            <label class="block text-[10px] font-black text-slate-400 uppercase tracking-widest">Razón Social / Empresa</label>
+                            <div class="relative group">
+                                <span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-slate-300 group-focus-within:text-[#FF6A00] transition-colors">business</span>
+                                <input type="text" id="p-lead-rs" class="w-full bg-slate-50 border-2 border-slate-100 pl-12 pr-5 py-4 rounded-2xl outline-none focus:border-[#FF6A00]/30 focus:bg-white transition-all text-sm font-bold text-primary" placeholder="Nombre de la empresa">
+                            </div>
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div class="space-y-2">
+                                <label class="block text-[10px] font-black text-slate-400 uppercase tracking-widest">RUC</label>
+                                <div class="relative group">
+                                    <span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-slate-300 group-focus-within:text-[#FF6A00] transition-colors">badge</span>
+                                    <input type="number" id="p-lead-ruc" class="w-full bg-slate-50 border-2 border-slate-100 pl-12 pr-5 py-4 rounded-2xl outline-none focus:border-[#FF6A00]/30 focus:bg-white transition-all text-sm font-bold text-primary" placeholder="11 dígitos">
+                                </div>
+                            </div>
+                            <div class="space-y-2">
+                                <label class="block text-[10px] font-black text-slate-400 uppercase tracking-widest">Correo Corporativo</label>
+                                <div class="relative group">
+                                    <span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-slate-300 group-focus-within:text-[#FF6A00] transition-colors">mail</span>
+                                    <input type="email" id="p-lead-email" class="w-full bg-slate-50 border-2 border-slate-100 pl-12 pr-5 py-4 rounded-2xl outline-none focus:border-[#FF6A00]/30 focus:bg-white transition-all text-sm font-bold text-primary" placeholder="ejemplo@empresa.com">
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div>
-                        <p class="text-[9px] font-black text-slate-400 uppercase tracking-widest leading-none mb-1">Ventas y Proyectos</p>
-                        <p class="text-sm font-black text-[#000b2b]">Asesor Especializado</p>
-                    </div>
-                </button>
 
-                <button onclick="backToForm()" class="w-full text-center text-[8px] font-bold text-slate-300 uppercase tracking-widest hover:text-[#FF6A00] transition-colors pt-2">← VOLVER AL FORMULARIO</button>
+                    <div class="bg-slate-50 p-5 rounded-2xl border-l-4 border-primary flex items-start gap-4">
+                        <span class="material-symbols-outlined text-primary text-xl">info</span>
+                        <p class="text-[11px] font-medium text-slate-500 leading-relaxed">
+                            Al hacer clic en continuar, será redirigido a WhatsApp Business para adjuntar sus planos en formato <strong class="text-primary">.DXF o .DWG</strong>.
+                        </p>
+                    </div>
+
+                    <button onclick="revealAdvisors()" class="w-full bg-[#FF6A00] hover:bg-[#e86000] active:scale-95 transition-all py-5 flex items-center justify-center gap-3 text-white font-black uppercase tracking-widest text-xs rounded-2xl shadow-xl shadow-[#FF6A00]/20">
+                        <span class="material-symbols-outlined">chat</span>
+                        CONTINUAR A WHATSAPP
+                    </button>
+                </div>
+
+                <div class="px-10 pb-10 text-center">
+                    <p class="text-[9px] font-bold text-slate-300 uppercase tracking-[0.4em]">Incorlaser © 2024 - Soluciones Industriales</p>
+                </div>
             </div>
-        </div>
 
-        <!-- Footer: Incorlaser Brand -->
-        <div class="px-8 pb-8 text-center">
-            <p class="text-[8px] font-black text-slate-300 uppercase tracking-[0.5em]">INCORLASER S.A.C.</p>
+            <!-- Advisor Selection View -->
+            <div id="advisor-selection-view" class="hidden flex flex-col h-full animate-in fade-in slide-in-from-right-4 duration-300">
+                <div class="bg-primary p-10">
+                    <button onclick="backToForm()" class="text-[#FF6A00] text-[10px] font-bold uppercase tracking-widest flex items-center gap-2 mb-4 hover:translate-x-[-4px] transition-transform">
+                        <span class="material-symbols-outlined text-sm">arrow_back</span> Volver al formulario
+                    </button>
+                    <h1 class="text-white text-2xl font-black uppercase tracking-tight">Seleccione su Asesor</h1>
+                </div>
+                <div class="p-10 space-y-4 flex-grow">
+                    <button onclick="contactAdvisor('51940374577')" class="w-full flex items-center gap-5 p-6 border-2 border-slate-100 rounded-2xl hover:border-[#FF6A00]/30 hover:bg-slate-50 transition-all text-left group">
+                        <div class="bg-[#25D366] text-white p-4 rounded-2xl group-hover:rotate-12 transition-transform shadow-lg shadow-[#25D366]/20">
+                            <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                        </div>
+                        <div>
+                            <p class="text-[10px] font-black text-slate-400 uppercase tracking-widest leading-none mb-1">Ventas y Cotizaciones</p>
+                            <p class="text-lg font-black text-primary uppercase tracking-tight">Asesor Técnico</p>
+                            <p class="text-xs font-bold text-[#25D366] flex items-center gap-1 mt-1">● Online ahora</p>
+                        </div>
+                    </button>
+                </div>
+            </div>
         </div>
     </div>
 </div>
