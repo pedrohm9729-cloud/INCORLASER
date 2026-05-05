@@ -293,17 +293,26 @@
 <section class="py-xl bg-surface-container-low">
 <div class="max-w-screen-2xl mx-auto px-8">
 <div class="grid grid-cols-1 lg:grid-cols-2 gap-xl items-center">
-<div class="relative group cursor-pointer" onclick="openVideoModal('videos/clip-laser.mp4')">
-                    <img alt="Cabezal Precitec Real" class="w-full aspect-square object-cover border border-outline-variant transition-all duration-700 group-hover:scale-[1.03]" src="img/cabezal-real.jpg"/>
+<div class="relative group cursor-pointer overflow-hidden border border-outline-variant aspect-square" 
+                     onmouseenter="this.querySelector('video').play()" 
+                     onmouseleave="this.querySelector('video').pause(); this.querySelector('video').currentTime = 0;">
                     
-                    <!-- Play Overlay -->
-                    <div class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-all duration-500 flex items-center justify-center">
-                        <div class="bg-white/10 backdrop-blur-xl p-8 rounded-full border border-white/20 transform scale-75 group-hover:scale-100 transition-all duration-500 shadow-2xl">
-                            <span class="material-symbols-outlined text-white text-6xl" style='font-variation-settings: "FILL" 1;'>play_arrow</span>
+                    <!-- Static Image -->
+                    <img alt="Cabezal Precitec Real" class="absolute inset-0 w-full h-full object-cover transition-opacity duration-500 group-hover:opacity-0 z-10" src="img/cabezal-real.jpg"/>
+                    
+                    <!-- Hover Video -->
+                    <video class="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-0" loop muted playsinline>
+                        <source src="videos/clip-laser.mp4" type="video/mp4">
+                    </video>
+
+                    <!-- Play Hint Overlay (Optional but nice) -->
+                    <div class="absolute inset-0 flex items-center justify-center z-20 opacity-100 group-hover:opacity-0 transition-opacity duration-300 pointer-events-none">
+                        <div class="bg-black/20 backdrop-blur-sm p-4 rounded-full">
+                            <span class="material-symbols-outlined text-white text-3xl">play_circle</span>
                         </div>
                     </div>
 
-                    <div class="absolute -bottom-6 -right-6 bg-primary text-white p-8 border-4 border-on-tertiary-container hidden md:block z-10">
+                    <div class="absolute -bottom-6 -right-6 bg-primary text-white p-8 border-4 border-on-tertiary-container hidden md:block z-30">
                         <div class="text-h1 font-h1">0.06<span class="text-lg font-normal">mm</span></div>
                         <div class="text-label-caps">PRECISIÓN MECÁNICA</div>
                     </div>
