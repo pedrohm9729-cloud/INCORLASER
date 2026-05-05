@@ -341,9 +341,12 @@
     <img src="assets/nosotros/foto-cabezal.jpg" alt="Cabezal láser" class="w-full h-[200px] object-cover group-hover:scale-105 transition-transform duration-500"/>
     <div class="p-2 bg-white"><p class="font-bold uppercase text-[10px] text-primary">Cabezal Láser</p></div>
   </div>
-  <div class="cursor-pointer overflow-hidden border border-outline-variant group" onclick="openLightbox('assets/nosotros/foto-piezas.jpg','Piezas terminadas con máxima precisión')">
-    <img src="assets/nosotros/foto-piezas.jpg" alt="Piezas terminadas" class="w-full h-[200px] object-cover group-hover:scale-105 transition-transform duration-500"/>
-    <div class="p-2 bg-white"><p class="font-bold uppercase text-[10px] text-primary">Piezas Cortadas</p></div>
+  <div class="cursor-pointer overflow-hidden border border-outline-variant group relative" onclick="openLightbox('videos/video-para-fotos.mp4','Producción industrial en tiempo real')">
+    <video src="videos/video-para-fotos.mp4" class="w-full h-[200px] object-cover group-hover:scale-105 transition-transform duration-500" muted loop autoplay playsinline></video>
+    <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-black/20">
+        <span class="material-symbols-outlined text-white text-4xl">play_circle</span>
+    </div>
+    <div class="p-2 bg-white"><p class="font-bold uppercase text-[10px] text-primary">Operación en Planta</p></div>
   </div>
   <div class="cursor-pointer overflow-hidden border border-outline-variant group" onclick="openLightbox('assets/nosotros/foto-maquina.jpg','Maquinaria Industrial 30kW — Vista completa')">
     <img src="assets/nosotros/foto-maquina.jpg" alt="Maquinaria Industrial" class="w-full h-[200px] object-cover group-hover:scale-105 transition-transform duration-500"/>
@@ -363,7 +366,8 @@
 <!-- Lightbox -->
 <div id="gallery-lightbox" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,0.95);align-items:center;justify-content:center;padding:16px;flex-direction:column;" onclick="closeLightbox(event)">
   <button onclick="closeLightboxBtn()" style="position:absolute;top:20px;right:24px;color:white;font-size:2.5rem;font-weight:bold;background:none;border:none;cursor:pointer;line-height:1;">&times;</button>
-  <img id="lightbox-img" src="" alt="" style="max-width:100%;max-height:80vh;object-fit:contain;box-shadow:0 25px 60px rgba(0,0,0,0.8);border:1px solid rgba(255,255,255,0.1);"/>
+  <img id="lightbox-img" src="" alt="" class="hidden" style="max-width:100%;max-height:80vh;object-fit:contain;box-shadow:0 25px 60px rgba(0,0,0,0.8);border:1px solid rgba(255,255,255,0.1);"/>
+  <video id="lightbox-video" src="" controls class="hidden" style="max-width:100%;max-height:80vh;box-shadow:0 25px 60px rgba(0,0,0,0.8);border:1px solid rgba(255,255,255,0.1);"></video>
   <p id="lightbox-caption" style="color:rgba(255,255,255,0.7);font-size:0.75rem;margin-top:16px;text-align:center;text-transform:uppercase;letter-spacing:0.15em;font-weight:700;"></p>
 </div>
 <!-- Misión y Visión Section -->
@@ -592,17 +596,39 @@
         closeWaModal();
     }
     function openLightbox(src, caption) {
-      document.getElementById('lightbox-img').src = src;
-      document.getElementById('lightbox-caption').innerText = caption;
+      const img = document.getElementById('lightbox-img');
+      const video = document.getElementById('lightbox-video');
+      const captionEl = document.getElementById('lightbox-caption');
+      
+      captionEl.innerText = caption;
+      
+      if (src.endsWith('.mp4') || src.endsWith('.webm')) {
+          img.classList.add('hidden');
+          video.classList.remove('hidden');
+          video.src = src;
+          video.play();
+      } else {
+          video.classList.add('hidden');
+          video.pause();
+          img.classList.remove('hidden');
+          img.src = src;
+      }
+      
       document.getElementById('gallery-lightbox').style.display = 'flex';
     }
     function closeLightbox(event) {
-      if (event.target.id === 'gallery-lightbox' || event.target.id === 'lightbox-img') {
+      const video = document.getElementById('lightbox-video');
+      if (event.target.id === 'gallery-lightbox' || event.target.id === 'lightbox-img' || event.target.id === 'lightbox-video') {
         document.getElementById('gallery-lightbox').style.display = 'none';
+        video.pause();
+        video.src = "";
       }
     }
     function closeLightboxBtn() {
+      const video = document.getElementById('lightbox-video');
       document.getElementById('gallery-lightbox').style.display = 'none';
+      video.pause();
+      video.src = "";
     }
 </script>
 </body></html>
