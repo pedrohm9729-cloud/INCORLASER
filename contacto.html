@@ -149,43 +149,55 @@
 <div class="lg:col-span-7">
 <div class="bg-white p-10 shadow-xl border border-gray-100">
 <h3 class="text-2xl font-bold text-primary mb-8 tracking-tight">Formulario de Cotización</h3>
-                <form id="contact-form" action="https://formspree.io/f/mnjwdpdg" method="POST" class="space-y-6">
+                <form id="contact-form" action="https://formspree.io/f/mnjwdpdg" method="POST" enctype="multipart/form-data" class="space-y-6">
                     <input type="hidden" name="_subject" value="Nueva Cotización desde INCORLASER.COM">
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    
+                    <!-- 2 Columns x 2 Rows Grid -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6">
                         <div class="space-y-2">
-                            <label class="text-sm font-bold text-gray-700 uppercase tracking-wide">Nombre Completo</label>
-                            <input name="nombre" class="w-full border-gray-300 focus:border-primary focus:ring-primary h-12" placeholder="Ej. Juan Pérez" type="text" required/>
+                            <label class="text-xs font-black text-slate-400 uppercase tracking-[0.2em]">Nombre Completo</label>
+                            <input name="nombre" class="w-full bg-slate-50 border-2 border-slate-100 px-5 py-4 focus:border-primary focus:bg-white transition-all text-sm font-bold text-primary" placeholder="Ej. Juan Pérez" type="text" required/>
                         </div>
                         <div class="space-y-2">
-                            <label class="text-sm font-bold text-gray-700 uppercase tracking-wide">Empresa</label>
-                            <input name="empresa" class="w-full border-gray-300 focus:border-primary focus:ring-primary h-12" placeholder="Nombre de su compañía" type="text" required/>
+                            <label class="text-xs font-black text-slate-400 uppercase tracking-[0.2em]">Empresa / Razón Social</label>
+                            <input name="empresa" class="w-full bg-slate-50 border-2 border-slate-100 px-5 py-4 focus:border-primary focus:bg-white transition-all text-sm font-bold text-primary" placeholder="Nombre de su compañía" type="text" required/>
+                        </div>
+                        <div class="space-y-2">
+                            <label class="text-xs font-black text-slate-400 uppercase tracking-[0.2em]">Correo Electrónico</label>
+                            <input name="email" class="w-full bg-slate-50 border-2 border-slate-100 px-5 py-4 focus:border-primary focus:bg-white transition-all text-sm font-bold text-primary" placeholder="juan@empresa.com" type="email" required/>
+                        </div>
+                        <div class="space-y-2">
+                            <label class="text-xs font-black text-slate-400 uppercase tracking-[0.2em]">WhatsApp / Celular</label>
+                            <input name="whatsapp" class="w-full bg-slate-50 border-2 border-slate-100 px-5 py-4 focus:border-primary focus:bg-white transition-all text-sm font-bold text-primary" placeholder="+51 999 999 999" type="tel" required/>
                         </div>
                     </div>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+                    <!-- Additional Info Row -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                         <div class="space-y-2">
-                            <label class="text-sm font-bold text-gray-700 uppercase tracking-wide">Correo Electrónico</label>
-                            <input name="email" class="w-full border-gray-300 focus:border-primary focus:ring-primary h-12" placeholder="juan@empresa.com" type="email" required/>
+                            <label class="text-xs font-black text-slate-400 uppercase tracking-[0.2em]">Servicio de Interés</label>
+                            <select name="servicio" class="w-full bg-slate-50 border-2 border-slate-100 px-5 py-4 focus:border-primary focus:bg-white transition-all text-sm font-bold text-primary appearance-none">
+                                <option>Corte Láser de Alta Potencia (30kW)</option>
+                                <option>Corte en Bisel (AWING V)</option>
+                                <option>Soldadura de Precisión</option>
+                                <option>Diseño y Desarrollo de Ingeniería</option>
+                                <option>Fabricación de Componentes Mineros</option>
+                            </select>
                         </div>
                         <div class="space-y-2">
-                            <label class="text-sm font-bold text-gray-700 uppercase tracking-wide">WhatsApp / Celular</label>
-                            <input name="whatsapp" class="w-full border-gray-300 focus:border-primary focus:ring-primary h-12" placeholder="+51 999 999 999" type="tel" required/>
+                            <label class="text-xs font-black text-slate-400 uppercase tracking-[0.2em]">Adjuntar Planos / PDF (Opcional)</label>
+                            <div class="relative">
+                                <input name="archivo" type="file" class="w-full bg-slate-50 border-2 border-dashed border-slate-200 px-5 py-3 text-xs font-bold text-slate-500 file:mr-4 file:py-2 file:px-4 file:border-0 file:text-xs file:font-black file:bg-primary file:text-white hover:file:bg-orange-600 transition-all cursor-pointer"/>
+                            </div>
                         </div>
                     </div>
+
                     <div class="space-y-2">
-                        <label class="text-sm font-bold text-gray-700 uppercase tracking-wide">Servicio de Interés</label>
-                        <select name="servicio" class="w-full border-gray-300 focus:border-primary focus:ring-primary h-12">
-                            <option>Corte Láser de Alta Potencia (30kW)</option>
-                            <option>Corte en Bisel (AWING V)</option>
-                            <option>Soldadura de Precisión</option>
-                            <option>Diseño y Desarrollo de Ingeniería</option>
-                            <option>Fabricación de Componentes Mineros</option>
-                        </select>
+                        <label class="text-xs font-black text-slate-400 uppercase tracking-[0.2em]">Descripción del Proyecto</label>
+                        <textarea name="mensaje" class="w-full bg-slate-50 border-2 border-slate-100 px-5 py-4 focus:border-primary focus:bg-white transition-all text-sm font-bold text-primary h-32" placeholder="Detalle material, espesor y cantidad..." required></textarea>
                     </div>
-                    <div class="space-y-2">
-                        <label class="text-sm font-bold text-gray-700 uppercase tracking-wide">Descripción del Proyecto</label>
-                        <textarea name="mensaje" class="w-full border-gray-300 focus:border-primary focus:ring-primary h-32" placeholder="Detalle material, espesor y cantidad..." required></textarea>
-                    </div>
-                    <button id="submit-btn" type="submit" class="w-full bg-[#FF6A00] text-white py-5 font-bold uppercase tracking-[0.2em] hover:bg-orange-600 transition-all shadow-lg shadow-orange-200">
+
+                    <button id="submit-btn" type="submit" class="w-full bg-[#FF6A00] text-white py-5 font-black uppercase tracking-[0.2em] hover:bg-orange-600 transition-all shadow-xl shadow-orange-200/50">
                         Enviar Solicitud de Cotización
                     </button>
                     <div id="form-status" class="hidden p-4 text-center font-bold uppercase text-xs tracking-widest"></div>
