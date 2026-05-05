@@ -117,10 +117,10 @@
 </head>
 <body class="bg-background text-on-surface font-body-md">
 <header class="fixed top-0 w-full z-50 bg-white border-b border-slate-200 transition-colors duration-300">
-<div class="flex justify-between items-center h-32 px-12 max-w-screen-2xl mx-auto">
+<div class="flex justify-between items-center h-20 px-6 md:px-12 max-w-screen-2xl mx-auto">
 <div class="flex items-center">
-<div class="relative h-32 flex items-center">
-<img alt="INCORLASER Logo" class="h-44 w-auto object-contain drop-shadow-md" src="img/logo.svg"/>
+<div class="relative h-20 flex items-center">
+<img alt="INCORLASER Logo" class="h-28 w-auto object-contain drop-shadow-md" src="img/logo.svg"/>
 </div>
 </div>
 <div class="flex items-center gap-4 md:gap-12">
@@ -145,8 +145,8 @@
 <!-- Mobile Menu Overlay -->
 <div id="mobile-menu" class="fixed inset-0 z-[100] bg-white transform translate-x-full transition-transform duration-500 ease-in-out md:hidden">
     <div class="flex flex-col h-full">
-        <div class="flex justify-between items-center h-32 px-12 border-b border-slate-100">
-            <img alt="INCORLASER Logo" class="h-24 w-auto" src="img/logo.svg"/>
+        <div class="flex justify-between items-center h-20 px-6 md:px-12 border-b border-slate-100">
+            <img alt="INCORLASER Logo" class="h-16 w-auto" src="img/logo.svg"/>
             <button id="close-menu-btn" class="text-primary p-2">
                 <span class="material-symbols-outlined text-4xl">close</span>
             </button>
@@ -164,7 +164,7 @@
         </div>
     </div>
 </div>
-<main class="pt-32">
+<main class="pt-20">
 <!-- Hero Section -->
 <section class="relative h-[600px] flex items-center overflow-hidden bg-primary">
 <div class="absolute inset-0 z-0">
@@ -327,36 +327,36 @@
 <h2 class="font-h2 text-h2 text-primary uppercase">Nuestra Planta en Acción</h2>
 <p class="text-on-surface-variant mt-4 max-w-2xl mx-auto text-sm">Imágenes reales de nuestras instalaciones y equipo. Haz clic para ampliar.</p>
 </div>
-<div class="grid grid-cols-2 md:grid-cols-4 gap-3">
-  <div class="col-span-2 cursor-pointer overflow-hidden border border-outline-variant group relative" onclick="openLightbox('assets/nosotros/foto-chispas.jpg','Corte láser en acción — Potencia 30kW')">
+<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
+  <div class="sm:col-span-2 cursor-pointer overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 group relative" onclick="openLightbox('assets/nosotros/foto-chispas.jpg','Corte láser en acción — Potencia 30kW')">
     <img src="assets/nosotros/foto-chispas.jpg" alt="Chispas de corte" class="w-full h-[280px] object-cover group-hover:scale-105 transition-transform duration-500"/>
     <div class="absolute inset-0 bg-primary/0 group-hover:bg-primary/20 transition-colors flex items-end"><p class="p-4 text-white font-bold uppercase text-xs opacity-0 group-hover:opacity-100 transition-opacity">Corte de Alta Potencia</p></div>
     <div class="absolute top-3 right-3 bg-accent-orange text-white text-[9px] font-bold uppercase tracking-widest px-2 py-1">DESTACADA</div>
   </div>
-  <div class="col-span-2 cursor-pointer overflow-hidden border border-outline-variant group relative" onclick="openLightbox('assets/nosotros/foto-equipo-1.jpg','Nuestro equipo de operarios especializados')">
+  <div class="sm:col-span-2 cursor-pointer overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 group relative" onclick="openLightbox('assets/nosotros/foto-equipo-1.jpg','Nuestro equipo de operarios especializados')">
     <img src="assets/nosotros/foto-equipo-1.jpg" alt="Equipo operario" class="w-full h-[280px] object-cover group-hover:scale-105 transition-transform duration-500"/>
     <div class="absolute inset-0 bg-primary/0 group-hover:bg-primary/20 transition-colors flex items-end"><p class="p-4 text-white font-bold uppercase text-xs opacity-0 group-hover:opacity-100 transition-opacity">Equipo Especializado</p></div>
   </div>
-  <div class="cursor-pointer overflow-hidden border border-outline-variant group" onclick="openLightbox('assets/nosotros/foto-cabezal.jpg','Cabezal de corte de alta precisión')">
+  <div class="cursor-pointer overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 group" onclick="openLightbox('assets/nosotros/foto-cabezal.jpg','Cabezal de corte de alta precisión')">
     <img src="assets/nosotros/foto-cabezal.jpg" alt="Cabezal láser" class="w-full h-[200px] object-cover group-hover:scale-105 transition-transform duration-500"/>
     <div class="p-2 bg-white"><p class="font-bold uppercase text-[10px] text-primary">Cabezal Láser</p></div>
   </div>
-  <div class="cursor-pointer overflow-hidden border border-outline-variant group relative" onclick="openLightbox('videos/video-para-fotos.mp4','Producción industrial en tiempo real')">
+  <div class="cursor-pointer overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 group relative" onclick="openLightbox('videos/video-para-fotos.mp4','Producción industrial en tiempo real')">
     <video src="videos/video-para-fotos.mp4" class="w-full h-[200px] object-cover group-hover:scale-105 transition-transform duration-500" muted loop autoplay playsinline></video>
     <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-black/20">
         <span class="material-symbols-outlined text-white text-4xl">play_circle</span>
     </div>
     <div class="p-2 bg-white"><p class="font-bold uppercase text-[10px] text-primary">Operación en Planta</p></div>
   </div>
-  <div class="cursor-pointer overflow-hidden border border-outline-variant group" onclick="openLightbox('assets/nosotros/foto-maquina.jpg','Maquinaria Industrial 30kW — Vista completa')">
+  <div class="cursor-pointer overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 group" onclick="openLightbox('assets/nosotros/foto-maquina.jpg','Maquinaria Industrial 30kW — Vista completa')">
     <img src="assets/nosotros/foto-maquina.jpg" alt="Maquinaria Industrial" class="w-full h-[200px] object-cover group-hover:scale-105 transition-transform duration-500"/>
     <div class="p-2 bg-white"><p class="font-bold uppercase text-[10px] text-primary">Tecnología 30kW</p></div>
   </div>
-  <div class="cursor-pointer overflow-hidden border border-outline-variant group" onclick="openLightbox('assets/nosotros/foto-panel.jpg','Técnico operando el panel de control CNC')">
+  <div class="cursor-pointer overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 group" onclick="openLightbox('assets/nosotros/foto-panel.jpg','Técnico operando el panel de control CNC')">
     <img src="assets/nosotros/foto-panel.jpg" alt="Panel CNC" class="w-full h-[200px] object-cover group-hover:scale-105 transition-transform duration-500"/>
     <div class="p-2 bg-white"><p class="font-bold uppercase text-[10px] text-primary">Control CNC</p></div>
   </div>
-  <div class="cursor-pointer overflow-hidden border border-outline-variant group col-span-2" onclick="openLightbox('assets/nosotros/foto-planta.jpg','Vista panorámica de nuestra planta industrial')">
+  <div class="cursor-pointer overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 group sm:col-span-2" onclick="openLightbox('assets/nosotros/foto-planta.jpg','Vista panorámica de nuestra planta industrial')">
     <img src="assets/nosotros/foto-planta.jpg" alt="Planta industrial" class="w-full h-[200px] object-cover group-hover:scale-105 transition-transform duration-500"/>
     <div class="p-2 bg-white"><p class="font-bold uppercase text-[10px] text-primary">Panorámica de la Planta</p></div>
   </div>
@@ -629,6 +629,20 @@
       document.getElementById('gallery-lightbox').style.display = 'none';
       video.pause();
       video.src = "";
-    }
+    // Scroll Reveal Animations
+    const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+                revealObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+    document.querySelectorAll('section > div, .reveal').forEach(el => {
+        if (!el.closest('nav') && !el.closest('header') && !el.closest('#mobile-menu') && !el.closest('#wa-modal-overlay')) {
+            el.classList.add('reveal');
+            revealObserver.observe(el);
+        }
+    });
 </script>
 </body></html>
