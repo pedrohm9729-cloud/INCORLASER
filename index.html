@@ -65,18 +65,47 @@
 <img alt="INCORLASER Logo" class="h-44 w-auto object-contain drop-shadow-md" src="img/logo.svg"/>
 </div>
 </div>
-<div class="hidden md:flex items-center gap-12">
-<a class="text-lg font-bold text-primary border-b-2 border-accent-orange font-headline tracking-tight pb-1" href="index.html">Inicio</a>
-<a class="text-lg font-medium text-slate-600 hover:text-primary transition-all font-headline tracking-tight" href="servicios.html">Servicios</a>
-<a class="text-lg font-medium text-slate-600 hover:text-primary transition-all font-headline tracking-tight" href="nosotros.html">Nosotros</a>
-<a class="text-lg font-medium text-slate-600 hover:text-primary transition-all font-headline tracking-tight" href="calidad.html">Calidad</a>
-<a class="text-lg font-medium text-slate-600 hover:text-primary transition-all font-headline tracking-tight" href="contacto.html">Contacto</a>
-</div>
-<div class="flex items-center">
-<a href="contacto.html" class="bg-accent-orange text-white px-8 py-4 text-sm font-bold tracking-tight uppercase hover:bg-orange-700 transition-colors shadow-lg shadow-accent-orange/20">SOLICITAR COTIZACIÓN</a>
+<div class="flex items-center gap-4 md:gap-12">
+    <nav class="hidden md:flex items-center gap-12">
+        <a class="text-lg font-bold text-primary border-b-2 border-accent-orange font-headline tracking-tight pb-1" href="index.html">Inicio</a>
+        <a class="text-lg font-medium text-slate-600 hover:text-primary transition-all font-headline tracking-tight" href="servicios.html">Servicios</a>
+        <a class="text-lg font-medium text-slate-600 hover:text-primary transition-all font-headline tracking-tight" href="nosotros.html">Nosotros</a>
+        <a class="text-lg font-medium text-slate-600 hover:text-primary transition-all font-headline tracking-tight" href="calidad.html">Calidad</a>
+        <a class="text-lg font-medium text-slate-600 hover:text-primary transition-all font-headline tracking-tight" href="contacto.html">Contacto</a>
+    </nav>
+    <div class="hidden lg:flex items-center">
+        <a href="contacto.html" class="bg-accent-orange text-white px-8 py-4 text-sm font-bold tracking-tight uppercase hover:bg-orange-700 transition-colors shadow-lg shadow-accent-orange/20">SOLICITAR COTIZACIÓN</a>
+    </div>
+    <!-- Hamburger Button -->
+    <button id="mobile-menu-btn" class="md:hidden flex items-center justify-center w-12 h-12 text-primary">
+        <span class="material-symbols-outlined text-4xl">menu</span>
+    </button>
 </div>
 </div>
 </nav>
+
+<!-- Mobile Menu Overlay -->
+<div id="mobile-menu" class="fixed inset-0 z-[100] bg-white transform translate-x-full transition-transform duration-500 ease-in-out md:hidden">
+    <div class="flex flex-col h-full">
+        <div class="flex justify-between items-center h-32 px-12 border-b border-slate-100">
+            <img alt="INCORLASER Logo" class="h-24 w-auto" src="img/logo.svg"/>
+            <button id="close-menu-btn" class="text-primary p-2">
+                <span class="material-symbols-outlined text-4xl">close</span>
+            </button>
+        </div>
+        <div class="flex-grow flex flex-col items-center justify-center gap-8 py-12 overflow-y-auto">
+            <a class="text-2xl font-black text-primary uppercase tracking-tighter" href="index.html">Inicio</a>
+            <a class="text-2xl font-black text-slate-400 hover:text-primary transition-colors uppercase tracking-tighter" href="servicios.html">Servicios</a>
+            <a class="text-2xl font-black text-slate-400 hover:text-primary transition-colors uppercase tracking-tighter" href="nosotros.html">Nosotros</a>
+            <a class="text-2xl font-black text-slate-400 hover:text-primary transition-colors uppercase tracking-tighter" href="calidad.html">Calidad</a>
+            <a class="text-2xl font-black text-slate-400 hover:text-primary transition-colors uppercase tracking-tighter" href="contacto.html">Contacto</a>
+            <a href="contacto.html" class="mt-8 bg-accent-orange text-white px-10 py-5 text-sm font-black tracking-[0.2em] uppercase shadow-xl shadow-accent-orange/30">SOLICITAR COTIZACIÓN</a>
+        </div>
+        <div class="p-12 border-t border-slate-100 text-center">
+            <p class="text-xs font-bold text-slate-300 uppercase tracking-widest">© 2024 INCORLÁSER S.A.C</p>
+        </div>
+    </div>
+</div>
 <main class="pt-32">
 <!-- Hero Section -->
 <section class="relative min-h-[850px] flex items-center overflow-hidden bg-slate-950">
@@ -497,6 +526,29 @@
         const message = encodeURIComponent('Hola INCORLASER, soy ' + name + ' de la empresa ' + rs + ' (RUC: ' + ruc + '). Mi correo es ' + email + '. Quisiera solicitar una asesoría técnica.');
         window.open('https://wa.me/' + phone + '?text=' + message, '_blank');
         closeWaModal();
+    }
+
+    // Mobile Menu Logic
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const closeMenuBtn = document.getElementById('close-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    if (mobileMenuBtn && closeMenuBtn && mobileMenu) {
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.remove('translate-x-full');
+        });
+
+        closeMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.add('translate-x-full');
+        });
+
+        // Close menu on link click
+        const mobileLinks = mobileMenu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('translate-x-full');
+            });
+        });
     }
 
     // Unidades Métrico/Imperial
