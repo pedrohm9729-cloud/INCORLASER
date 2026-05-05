@@ -293,13 +293,21 @@
 <section class="py-xl bg-surface-container-low">
 <div class="max-w-screen-2xl mx-auto px-8">
 <div class="grid grid-cols-1 lg:grid-cols-2 gap-xl items-center">
-<div class="relative">
-                    <img alt="Cabezal Precitec Real" class="w-full aspect-square object-cover border border-outline-variant" src="img/cabezal-real.jpg"/>
-<div class="absolute -bottom-6 -right-6 bg-primary text-white p-8 border-4 border-on-tertiary-container hidden md:block">
-<div class="text-h1 font-h1">0.06<span class="text-lg font-normal">mm</span></div>
-<div class="text-label-caps">PRECISIÓN MECÁNICA</div>
-</div>
-</div>
+<div class="relative group cursor-pointer" onclick="openVideoModal('videos/clip-laser.mp4')">
+                    <img alt="Cabezal Precitec Real" class="w-full aspect-square object-cover border border-outline-variant transition-all duration-700 group-hover:scale-[1.03]" src="img/cabezal-real.jpg"/>
+                    
+                    <!-- Play Overlay -->
+                    <div class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-all duration-500 flex items-center justify-center">
+                        <div class="bg-white/10 backdrop-blur-xl p-8 rounded-full border border-white/20 transform scale-75 group-hover:scale-100 transition-all duration-500 shadow-2xl">
+                            <span class="material-symbols-outlined text-white text-6xl" style='font-variation-settings: "FILL" 1;'>play_arrow</span>
+                        </div>
+                    </div>
+
+                    <div class="absolute -bottom-6 -right-6 bg-primary text-white p-8 border-4 border-on-tertiary-container hidden md:block z-10">
+                        <div class="text-h1 font-h1">0.06<span class="text-lg font-normal">mm</span></div>
+                        <div class="text-label-caps">PRECISIÓN MECÁNICA</div>
+                    </div>
+                </div>
 <div>
 <h2 class="font-h2 text-h2 text-primary mb-6">Tecnología de Cabezal Biselador</h2>
 <p class="font-body-lg text-body-lg text-secondary mb-8">
@@ -580,15 +588,63 @@
         window.open('https://wa.me/' + phone + '?text=' + message, '_blank');
         closeWaModal();
     }
+<script>
+    function openVideoModal(videoSrc) {
+        const modal = document.getElementById('video-modal');
+        const container = document.getElementById('video-container');
+        const video = document.getElementById('modal-video');
+        
+        video.src = videoSrc;
+        modal.classList.remove('hidden');
+        modal.classList.add('flex');
+        
+        setTimeout(() => {
+            container.classList.remove('scale-90', 'opacity-0');
+            container.classList.add('scale-100', 'opacity-100');
+        }, 10);
+        
+        video.play();
+    }
+
+    function closeVideoModal() {
+        const modal = document.getElementById('video-modal');
+        const container = document.getElementById('video-container');
+        const video = document.getElementById('modal-video');
+        
+        container.classList.remove('scale-100', 'opacity-100');
+        container.classList.add('scale-90', 'opacity-0');
+        
+        setTimeout(() => {
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+            video.pause();
+            video.src = "";
+        }, 500);
+    }
+
+    document.getElementById('video-modal').addEventListener('click', function(e) {
+        if(e.target === this) closeVideoModal();
+    });
 </script>
 
 <!-- Global Lightbox -->
 <div id="global-lightbox" class="fixed inset-0 z-[300] hidden items-center justify-center bg-black/20 backdrop-blur-sm cursor-zoom-out" onclick="closeLightbox()">
     <div class="relative max-w-[95%] max-h-[95vh] animate-in zoom-in-95 duration-300">
         <img id="lb-image" src="" alt="Zoom Procedimiento" class="max-w-full max-h-[90vh] shadow-[0_20px_60px_rgba(0,0,0,0.3)] border border-white/20 rounded-sm">
-        <button class="absolute -top-12 right-0 text-[#000b2b] flex items-center gap-2 font-bold text-xs uppercase tracking-widest hover:text-[#FF6A00] transition-colors">
-            Cerrar <span class="material-symbols-outlined">close</span>
-        </button>
     </div>
 </div>
-</body></html>
+
+<!-- Video Modal Container -->
+<div id="video-modal" class="fixed inset-0 z-[400] hidden items-center justify-center bg-black/90 backdrop-blur-xl p-4 md:p-12 transition-all duration-500">
+    <div class="relative w-full max-w-lg aspect-[9/16] bg-black shadow-2xl border border-white/10 overflow-hidden transform scale-90 opacity-0 transition-all duration-500" id="video-container">
+        <button onclick="closeVideoModal()" class="absolute top-6 right-6 z-50 bg-black/50 hover:bg-white/20 p-3 rounded-full text-white backdrop-blur-md transition-colors">
+            <span class="material-symbols-outlined text-3xl">close</span>
+        </button>
+        <video id="modal-video" class="w-full h-full object-cover" controls playsinline>
+            <source src="" type="video/mp4">
+        </video>
+    </div>
+</div>
+
+</body>
+</html>
