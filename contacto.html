@@ -149,7 +149,7 @@
 <div class="lg:col-span-7">
 <div class="bg-white p-10 shadow-xl border border-gray-100">
 <h3 class="text-2xl font-bold text-primary mb-8 tracking-tight">Formulario de Cotización</h3>
-                <form id="contact-form" action="https://formspree.io/f/mnjwdpdg" method="POST" enctype="multipart/form-data" class="space-y-6">
+                <form id="contact-form" action="https://formspree.io/f/mnjwdpdg" method="POST" class="space-y-6">
                     <input type="hidden" name="_subject" value="Nueva Cotización desde INCORLASER.COM">
                     
                     <!-- 2 Columns x 2 Rows Grid -->
@@ -172,24 +172,15 @@
                         </div>
                     </div>
 
-                    <!-- Additional Info Row -->
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                        <div class="space-y-2">
-                            <label class="text-xs font-black text-slate-400 uppercase tracking-[0.2em]">Servicio de Interés</label>
-                            <select name="servicio" class="w-full bg-slate-50 border-2 border-slate-100 px-5 py-4 focus:border-primary focus:bg-white transition-all text-sm font-bold text-primary appearance-none">
-                                <option>Corte Láser de Alta Potencia (30kW)</option>
-                                <option>Corte en Bisel (AWING V)</option>
-                                <option>Soldadura de Precisión</option>
-                                <option>Diseño y Desarrollo de Ingeniería</option>
-                                <option>Fabricación de Componentes Mineros</option>
-                            </select>
-                        </div>
-                        <div class="space-y-2">
-                            <label class="text-xs font-black text-slate-400 uppercase tracking-[0.2em]">Adjuntar Planos / PDF (Opcional)</label>
-                            <div class="relative">
-                                <input name="archivo" type="file" class="w-full bg-slate-50 border-2 border-dashed border-slate-200 px-5 py-3 text-xs font-bold text-slate-500 file:mr-4 file:py-2 file:px-4 file:border-0 file:text-xs file:font-black file:bg-primary file:text-white hover:file:bg-orange-600 transition-all cursor-pointer"/>
-                            </div>
-                        </div>
+                    <div class="space-y-2">
+                        <label class="text-xs font-black text-slate-400 uppercase tracking-[0.2em]">Servicio de Interés</label>
+                        <select name="servicio" class="w-full bg-slate-50 border-2 border-slate-100 px-5 py-4 focus:border-primary focus:bg-white transition-all text-sm font-bold text-primary appearance-none">
+                            <option>Corte Láser de Alta Potencia (30kW)</option>
+                            <option>Corte en Bisel (AWING V)</option>
+                            <option>Soldadura de Precisión</option>
+                            <option>Diseño y Desarrollo de Ingeniería</option>
+                            <option>Fabricación de Componentes Mineros</option>
+                        </select>
                     </div>
 
                     <div class="space-y-2">
